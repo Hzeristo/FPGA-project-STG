@@ -17,7 +17,7 @@ reg [10:0] cnt2;   //control the length of whole music
 wire add_cnt2;
 wire end_cnt2;
 
-reg [16:0] pre_set, note0, note1, note2, note3;
+reg [16:0] note_to_be_played, note0, note1, note2, note3;
 reg [10:0] /*num_cnt1,*/ num_cnt2;
 
 reg [32:0] clk0, clk1, clk2, clk3;
@@ -46,16 +46,16 @@ end
 always @(posedge clk or negedge clk or negedge rst_n) begin
     if(music_name == 0) begin //神恋
       clk0 <= clk;
-      pre_set <= note0;
+      note_to_be_played <= note0;
     end else if(music_name == 1) begin //mokou
       clk1 <= clk;
-      pre_set <= note1;
+      note_to_be_played <= note1;
     end else if(music_name == 2) begin //稻田姬
       clk2 <= clk;
-      pre_set <= note2;
+      note_to_be_played <= note2;
     end else if(music_name == 3) begin //纯狐
       clk3 <= clk;
-      pre_set <= note3;
+      note_to_be_played <= note3;
     end
 end
 
@@ -71,8 +71,8 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 assign add_cnt0 = 1'b1;
-assign end_cnt0 = add_cnt0 && cnt0 == pre_set - 1;
-assign beep = (cnt0 >= (pre_set / 2)) ? 1 : 0;      //second half wave is high
+assign end_cnt0 = add_cnt0 && cnt0 == note_to_be_played - 1;
+assign beep = (cnt0 >= (note_to_be_played / 2)) ? 1 : 0;      //second half wave is high
 
 always @(posedge clk or negedge rst_n) begin
   if (!rst_n) begin
