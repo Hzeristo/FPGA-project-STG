@@ -38,4 +38,4 @@ def png_to_12bitrgb_coe(png_path, coe_path):
                     coe_file.write(",\n")
 
 # 用法示例
-png_to_12bitrgb_coe("enm5b.png", "moon.coe")
+png_to_12bitrgb_coe("hecatia.png", "hecatia.coe")

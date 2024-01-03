@@ -5,7 +5,7 @@ def png_to_12bitrgb_coe(png_path, coe_path):
     img = Image.open(png_path)
     
     # 确保图像是RGB模式
-    img = img.convert('RGBA')
+    img = img.convert('RGB')
     
     # 获取图像的宽度和高度
     width, height = img.size
@@ -20,13 +20,10 @@ def png_to_12bitrgb_coe(png_path, coe_path):
         for y in range(height):
             for x in range(width):
                 # 获取像素的RGB值
-                r, g, b, a = img.getpixel((x, y))
+                r, g, b = img.getpixel((x, y))
                 
                 # 将RGB值转换为12位格式
-                if a == 0:
-                    rgb_12bit = int('110011001100', 2)
-                else:
-                    rgb_12bit = ((r & 0xF0) << 4) | ((g & 0xF0)) | ((b & 0xF0) >> 4)
+                rgb_12bit = ((r & 0xF0) << 4) | ((g & 0xF0)) | ((b & 0xF0) >> 4)
                 
                 # 将12位RGB值写入COE文件
                 coe_file.write(f"{rgb_12bit:012b}")
@@ -38,4 +35,4 @@ def png_to_12bitrgb_coe(png_path, coe_path):
                     coe_file.write(",\n")
 
 # 用法示例
-png_to_12bitrgb_coe("enm5b.png", "moon.coe")
+png_to_12bitrgb_coe("background.png", "background.coe")
