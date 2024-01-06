@@ -10,6 +10,7 @@ module moon(
 
 localparam MAX_X = 384,
 localparam MAX_Y = 448;
+localparam TIME_MAX = 4000000;
 
 reg [9:0] moon_x_reg, moon_y_reg;
 reg [9:0] moon_x_next, moon_y_next;
@@ -84,7 +85,7 @@ end
 
 always @* begin
     if(x >= moon_x_reg - 63 && x <= moon_x_reg + 64 && y >= moon_y_reg - 63 && y <= moon_y_reg + 64) begin
-        addr_reg = moon_x_reg - 63 + (moon_y_reg - 63) * 128;
+        addr_reg = x - moon_x_reg + 63 + (y - moon_y_reg + 63) * 128;
     end
 end
 

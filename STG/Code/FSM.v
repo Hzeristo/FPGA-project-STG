@@ -2,6 +2,7 @@ module FSM(
     input clk, hard_reset,
     input enter, bomb,
     input collision,
+    input die,
     output [3:0] num_bomb,
     output [3:0] num_life,
     output [4:0] game_state,
@@ -14,6 +15,7 @@ localparam Start = 4'b0001;
 localparam Play = 4'b0010;
 localparam Collision = 4'b1010;
 localparam Bomb = 4'b0110;
+localparam Success = 4'b1000;
 localparam Gameover = 4'b1001;
 
 reg [3:0] num_bomb_next;
@@ -73,6 +75,9 @@ always @* begin
             game_state_next = Bomb;
             timeout_next = 4000_0000_0;
         end	
+        if(die) begin
+            game_state_next = Success;
+        end
 		if(collision) begin				
 			if(num_life == 0) begin    	
 				num_life_next = num_life - 1;	
@@ -90,6 +95,9 @@ always @* begin
         if(bomb && num_bomb > 0) begin
             game_state_next = Bomb;
             timeout_next = 4000_0000_0;
+        end
+        if(die) begin
+            game_state_next = Success;
         end						
 		if(timeout_reg > 0)              	
 			timeout_next = timeout_reg - 1;	
@@ -98,6 +106,9 @@ always @* begin
 	end
     endcase
     Bomb: begin
+        if(die) begin
+            game_state_next = Success;
+        end
         if(timeout_reg > 0) begin
             timeout_next = timeout_reg - 1;
         end
@@ -105,10 +116,20 @@ always @* begin
             game_state_next = Play;
         end
     end
+    Success: begin
+        if(enter_posedge) begin        			
+			num_life_next = 3;
+            num_bomb_next = 3;
+            game_reset = 1;          
+            timeout_next = 0;
+            game_state_next = Initial;	             			       			
+		end
+    end
     Gameover: begin
 		if(enter_posedge) begin            			
 			num_life_next = 3;
-            num_bomb_next = 3;                 			
+            num_bomb_next = 3;
+            timeout_next = 0;             			
 			game_state_next = Initial;		
 			game_reset = 1;          			
 		end
