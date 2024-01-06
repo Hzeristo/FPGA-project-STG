@@ -99,7 +99,7 @@ always @* begin
     endcase
     Bomb: begin
         if(timeout_reg > 0) begin
-            timeout_reg = timeout_reg - 1;
+            timeout_next = timeout_reg - 1;
         end
         else begin
             game_state_next = Play;
@@ -107,7 +107,8 @@ always @* begin
     end
     Gameover: begin
 		if(enter_posedge) begin            			
-			heart_next = 3;           			
+			num_life_next = 3;
+            num_bomb_next = 3;                 			
 			game_state_next = Initial;		
 			game_reset = 1;          			
 		end

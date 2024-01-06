@@ -8,8 +8,94 @@ module moon(
     output [11:0] rgb_out
 );
 
-localparam MAX_X = 640,
-localparam MAX_Y = 480;
+localparam MAX_X = 384,
+localparam MAX_Y = 448;
 
+reg [9:0] moon_x_reg, moon_y_reg;
+reg [9:0] moon_x_next, moon_y_next;
+reg [9:0] player_x_reg, player_y_reg;
+reg [25:0] time_reg;  
+wire [25:0] time_next;  
+reg tick_reg;
+assign time_next = (time_reg < TIME_MAX - speed_offset) ? time_reg + 1 : 0;        
+wire tick = (time_reg == TIME_MAX - speed_offset) ? 1 : 0;
+reg on_border;
+reg [19:0] delta_x, delta_y;
+reg [9:0] step_count;
+reg [25:0] delay_reg;
+reg [13:0] addr_reg;
+wire [13:0] addr;
+assign addr = addr_reg;
+
+initial begin
+    on_border = 0;
+    delay_reg = 0;
+end
+
+always @* begin
+    if((moon_x_reg == 0)||(moon_x_reg = 384)||(moon_y_reg = 0)||(moon_y_reg = 448))begin
+        on_border = 1;
+    end
+    else begin
+        on_border = 0;
+    end
+end
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        time_reg <= 0;
+    end
+    else begin
+        moon_x_reg <= moon_x_next;
+        moon_y_reg <= moon_y_next;
+        time_reg <= time_next;
+    end
+end
+
+always @(posedge tick or posedge reset) begin
+    moon_x_next = moon_x_reg;
+    moon_x_next = moon_x_reg;
+    if(reset) begin
+        moon_x_next = 192;
+        moon_y_next = 100;
+        if(delay_reg < 2000_0000_0) begin
+            delay_reg = delay_reg + 1;
+        end
+        else begin
+            delta_x = (player_x - moon_x_reg) << 10;
+            delta_y = (player_y - moon_y_reg) << 10;
+        end
+    end
+    else if(on_border) begin
+        if(delay_reg < 2000_0000_0) begin
+            delay_reg = delay_reg + 1;
+        end
+        else begin
+            delta_x = (player_x - moon_x_reg) << 10;
+            delta_y = (player_y - moon_y_reg) << 10;
+        end
+    end
+    else begin
+        moon_x_next = moon_x_reg + (delta_x >> 10);
+        moon_y_next = moon_y_reg + (delta_y >> 10);
+    end
+
+end
+
+always @* begin
+    if(x >= moon_x_reg - 63 && x <= moon_x_reg + 64 && y >= moon_y_reg - 63 && y <= moon_y_reg + 64) begin
+        addr_reg = moon_x_reg - 63 + (moon_y_reg - 63) * 128;
+    end
+end
+
+moon_dist_mem moon_unit (
+  .a(addr),      // input wire [13 : 0] a
+  .spo(rgb_out)  // output wire [11 : 0] spo
+);
+
+wire cover_on = (x >= moon_x_reg - 63 && x <= moon_x_reg + 64 && y >= moon_y_reg - 63 && y <= moon_y_reg + 64) ? 1 : 0;
+assign moon_on = cover_on && (rgb_out != 12'b1100_1100_1100) ? 1 : 0;
+assign moon_x = moon_x_reg;
+assign moon_y = moon_y_reg;
 
 endmodule
