@@ -3,11 +3,11 @@ module FSM(
     input enter, bomb,
     input collision,
     input die,
-    output [3:0] num_bomb,
-    output [3:0] num_life,
-    output [4:0] game_state,
-    output game_en,
-    output game_reset
+    output reg [3:0] num_bomb,
+    output reg [3:0] num_life,
+    output reg [3:0] game_state,
+    output reg game_en,
+    output reg game_reset
 );
 
 localparam Initial = 4'b0000;
@@ -27,12 +27,22 @@ reg [31:0] timeout_reg, timeout_next;
 wire enter_posedge = enter & ~enter_reg;
 wire bomb_posedge = bomb & ~bomb_reg;
 
+initial begin
+    game_state <= Initial;
+    timeout_reg <= 2000;       //2000_0000
+    num_life <= 3;
+    num_bomb <= 3;
+	game_en  <= 0;
+    enter_reg <= 0;
+    bomb_reg <= 0;
+end
+
 always @(posedge clk or posedge hard_reset)
 	if(hard_reset) begin
 		enter_reg <= 0;
         bomb_reg <= 0;
 		game_state <= Initial;				//initialization
-		timeout_reg <= 20000000;			//reset collision timer
+		timeout_reg <= 2000;			//reset collision timer, should be 2000_0000
 		num_life <= 3;
         num_bomb <= 3;
 		game_en  <= 0;
@@ -42,7 +52,8 @@ always @(posedge clk or posedge hard_reset)
         bomb_reg <= bomb;
 		game_state <= game_state_next;
 		timeout_reg <= timeout_next;
-		num_life <= life_next;
+		num_life <= num_life_next;
+		num_bomb <= num_bomb_next;
 		game_en <= game_en_next;
 	end
 
@@ -57,7 +68,7 @@ always @* begin
     case(game_state)
     Initial: begin
         if(timeout_reg > 0) begin
-            timeout_reg = timeout_reg - 1;
+            timeout_next = timeout_reg - 1;
         end
         else begin
             game_state_next = Start;
@@ -72,8 +83,9 @@ always @* begin
     end
     Play: begin
         if(bomb && num_bomb > 0) begin
+            num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;
-            timeout_next = 4000_0000_0;
+            timeout_next = 4000;
         end	
         if(die) begin
             game_state_next = Success;
@@ -87,14 +99,15 @@ always @* begin
 			else begin
 				num_life_next = num_life - 1; 	
 				game_state_next = Collision;
-				timeout_next = 2000_0000_0; 	
+				timeout_next = 2000; 	
 			end
 		end
 	end
     Collision: begin
         if(bomb && num_bomb > 0) begin
+            num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;
-            timeout_next = 4000_0000_0;
+            timeout_next = 4000;
         end
         if(die) begin
             game_state_next = Success;
@@ -104,7 +117,6 @@ always @* begin
 		else 
 			game_state_next = Play;   			
 	end
-    endcase
     Bomb: begin
         if(die) begin
             game_state_next = Success;
@@ -134,6 +146,7 @@ always @* begin
 			game_reset = 1;          			
 		end
 	end
+	endcase
 end
 
 endmodule
