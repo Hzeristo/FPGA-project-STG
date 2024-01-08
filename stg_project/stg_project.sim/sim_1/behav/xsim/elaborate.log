@@ -7,4 +7,12 @@ WARNING: [XSIM 43-3431] One or more environment variables have been detected whi
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module dist_mem_gen_v8_0_13.dist_mem_gen_v8_0_13(C_FAMILY="k...
+Compiling module xil_defaultlib.moon_dist_mem
+Compiling module xil_defaultlib.moon
+Compiling module xil_defaultlib.moon_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot moon_tb_behav

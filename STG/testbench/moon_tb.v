@@ -30,9 +30,9 @@ module moon_tb();
 
   initial begin
     reset = 0;
-    player_x = 300;
+    player_x = 100;
     player_y = 400;
-    x = 300;
+    x = 100;
     y = 400;
     speed_offset = 0;
   end
