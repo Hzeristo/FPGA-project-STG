@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="FSM_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="FSM_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="272,951.334 ns"></ZoomStartTime>
+      <ZoomEndTime time="273,843.335 ns"></ZoomEndTime>
+      <Cursor1Time time="273,120.334 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="321"></NameColumnWidth>
+      <ValueColumnWidth column_width="188"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/FSM_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/hard_reset" type="logic">
+      <obj_property name="ElementShortName">hard_reset</obj_property>
+      <obj_property name="ObjectShortName">hard_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/enter" type="logic">
+      <obj_property name="ElementShortName">enter</obj_property>
+      <obj_property name="ObjectShortName">enter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/bomb" type="logic">
+      <obj_property name="ElementShortName">bomb</obj_property>
+      <obj_property name="ObjectShortName">bomb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/collision" type="logic">
+      <obj_property name="ElementShortName">collision</obj_property>
+      <obj_property name="ObjectShortName">collision</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/die" type="logic">
+      <obj_property name="ElementShortName">die</obj_property>
+      <obj_property name="ObjectShortName">die</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/uut/game_state_next" type="array">
+      <obj_property name="ElementShortName">game_state_next[3:0]</obj_property>
+      <obj_property name="ObjectShortName">game_state_next[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/uut/num_life_next" type="array">
+      <obj_property name="ElementShortName">num_life_next[3:0]</obj_property>
+      <obj_property name="ObjectShortName">num_life_next[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/uut/num_bomb_next" type="array">
+      <obj_property name="ElementShortName">num_bomb_next[3:0]</obj_property>
+      <obj_property name="ObjectShortName">num_bomb_next[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/uut/timeout_reg" type="array">
+      <obj_property name="ElementShortName">timeout_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">timeout_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/uut/timeout_next" type="array">
+      <obj_property name="ElementShortName">timeout_next[31:0]</obj_property>
+      <obj_property name="ObjectShortName">timeout_next[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/num_bomb" type="array">
+      <obj_property name="ElementShortName">num_bomb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">num_bomb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/num_life" type="array">
+      <obj_property name="ElementShortName">num_life[3:0]</obj_property>
+      <obj_property name="ObjectShortName">num_life[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/uut/enter_reg" type="logic">
+      <obj_property name="ElementShortName">enter_reg</obj_property>
+      <obj_property name="ObjectShortName">enter_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/uut/bomb_reg" type="logic">
+      <obj_property name="ElementShortName">bomb_reg</obj_property>
+      <obj_property name="ObjectShortName">bomb_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/game_state" type="array">
+      <obj_property name="ElementShortName">game_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">game_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/game_en" type="logic">
+      <obj_property name="ElementShortName">game_en</obj_property>
+      <obj_property name="ObjectShortName">game_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FSM_tb/game_reset" type="logic">
+      <obj_property name="ElementShortName">game_reset</obj_property>
+      <obj_property name="ObjectShortName">game_reset</obj_property>
+   </wvobject>
+</wave_config>
