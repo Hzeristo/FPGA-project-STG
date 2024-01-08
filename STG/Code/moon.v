@@ -14,18 +14,18 @@ localparam TIME_MAX = 4000;         //确定tick长度
 
 reg [9:0] moon_x_reg, moon_y_reg;
 reg [9:0] moon_x_next, moon_y_next;
-reg [9:0] player_x_reg, player_y_reg;
+reg [25:0] delay_reg, delay_next;
 reg [25:0] time_reg;  
 wire [25:0] time_next;  
 assign time_next = (time_reg < TIME_MAX - speed_offset) ? time_reg + 1 : 0;        
 wire tick = (time_reg == TIME_MAX - speed_offset) ? 1 : 0;
 reg on_border;
-reg [25:0] delay_reg, delay_next;
 reg [13:0] addr_reg;
 wire [13:0] addr;
 assign addr = addr_reg;
 reg state;
 reg start;
+reg signed [9:0] delta_x, delta_y;
 
 
 initial begin
@@ -61,7 +61,7 @@ end
   end
 
 always @* begin
-    if(moon_x_reg <= 0||moon_x_reg >= 384||moon_y_reg <= 0||moon_y_reg >= 448)begin
+    if(moon_x_reg == 0||moon_x_reg == 384||moon_y_reg == 0||moon_y_reg == 448)begin
         on_border = 1;
     end
     else begin
@@ -80,8 +80,8 @@ always @(posedge clk or posedge reset) begin
         time_reg <= time_next;
     end
     if(start) begin
-        delta_x = (player_x - moon_x_reg);
-        delta_y = (player_y - moon_y_reg);
+        delta_x = ($signed(player_x) - $signed(moon_x_reg));
+        delta_y = ($signed(player_y) - $signed(moon_y_reg));
     end
 end
 
@@ -96,8 +96,24 @@ always @(posedge tick or posedge reset) begin
         end
     end
     else if(on_border) begin
+        delta_x = ($signed(player_x) - $signed(moon_x_reg));
+        delta_y = ($signed(player_y) - $signed(moon_y_reg));
         if(delay_reg < 200) begin
             delay_next = delay_reg + 1;
+        end
+        else begin
+            if(delta_x > 0) begin 
+                moon_x_next = moon_x_reg + 1;
+            end
+            else begin
+                moon_x_next = moon_x_reg - 1;
+            end
+            if(delta_y > 0) begin 
+                moon_y_next = moon_y_reg + 1;
+            end
+            else begin
+                moon_y_next = moon_y_reg - 1;
+            end
         end
     end
     else begin

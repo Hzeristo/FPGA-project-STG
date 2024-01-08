@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/moon_dist_mem/sim/moon_dist_mem.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module moon_dist_mem
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/moon.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module moon
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/CodesPractice/learning/DL/FPGA-project-STG/STG/testbench/moon_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module moon_tb
