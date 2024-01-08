@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_collision.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module judge_collision
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/CodesPractice/learning/DL/FPGA-project-STG/STG/testbench/judge_collision_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module judge_collision_tb

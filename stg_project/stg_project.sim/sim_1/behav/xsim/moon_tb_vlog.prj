@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../stg_project.gen/sources_1/ip/moon_dist_mem/sim/moon_dist_mem.v" \
+"../../../../../STG/Code/moon.v" \
+"../../../../../STG/testbench/moon_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
