@@ -32,6 +32,8 @@ reg [7:0] life;
 initial begin
     timer_reg = 0;
     life = 3'd100;
+    hecatia_x_next = 192;
+    hecatia_y_next = 100;
 end
 
 always @(posedge clk or posedge reset) begin
@@ -41,7 +43,7 @@ always @(posedge clk or posedge reset) begin
     else begin
         hecatia_x_reg <= hecatia_x_next;
         hecatia_y_reg <= hecatia_y_next;
-        time_reg <= time_next;
+        timer_reg <= time_next;
     end
 end
 
@@ -59,7 +61,7 @@ always @(posedge tick or posedge reset) begin
     else if(timer_reg > 1500_0000_00) begin
         hecatia_x_next = hecatia_next - 1;
     end
-    if(hit) begin
+    if(is_hit) begin
         life = life - 1;
     end
 end

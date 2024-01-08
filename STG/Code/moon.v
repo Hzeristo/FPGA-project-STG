@@ -10,7 +10,7 @@ module moon(
 
 localparam MAX_X = 384,
 localparam MAX_Y = 448;
-localparam TIME_MAX = 4000000;
+localparam TIME_MAX = 4000;         //确定tick长度
 
 reg [9:0] moon_x_reg, moon_y_reg;
 reg [9:0] moon_x_next, moon_y_next;
@@ -59,7 +59,7 @@ always @(posedge tick or posedge reset) begin
     if(reset) begin
         moon_x_next = 192;
         moon_y_next = 100;
-        if(delay_reg < 2000_0000_0) begin
+        if(delay_reg < 2000) begin
             delay_reg = delay_reg + 1;
         end
         else begin
@@ -68,7 +68,7 @@ always @(posedge tick or posedge reset) begin
         end
     end
     else if(on_border) begin
-        if(delay_reg < 2000_0000_0) begin
+        if(delay_reg < 2000) begin
             delay_reg = delay_reg + 1;
         end
         else begin
