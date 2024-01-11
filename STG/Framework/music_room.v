@@ -4,64 +4,6 @@ module music_room (
   output beep
 );
 
-reg [16:0] cnt0;  //control the frequency of buzzer
-wire add_cnt0;
-wire end_cnt0;
-
-reg [10:0] cnt1;   //control the length of each note
-wire add_cnt1;
-wire end_cnt1;
-
-reg [10:0] cnt2;   //control the length of whole music
-wire add_cnt2;
-wire end_cnt2;
-
-reg [16:0] pre_set;
-
-
-always @(posedge clk or negedge rst_n) begin
-  if (!rst_n) begin
-    cnt0 <= 0;
-  end else if (add_cnt0) begin
-    if (end_cnt0)
-      cnt0 <= 0;
-    else
-      cnt0 <= cnt0 + 1;  
-  end
-end
-
-assign add_cnt0 = 1'b1;
-assign end_cnt0 = add_cnt0 && cnt0 == note - 1;
-assign beep = (cnt0 >= (note / 2)) ? 1 : 0;      //second half wave is high
-
-always @(posedge clk or negedge rst_n) begin
-  if (!rst_n) begin
-    cnt1 <= 0;
-  end else if (add_cnt1) begin
-    if (end_cnt1)
-      cnt1 <= 0;
-    else
-      cnt1 <= cnt1 + 1; 
-  end
-end
-
-assign add_cnt1 = end_cnt0;
-assign end_cnt1 = add_cnt1 && cnt1 == 300 - 1;      //each note oscillate for 300 times, about 1s.
-
-always @(posedge clk or negedge rst_n) begin
-  if (!rst_n) begin
-    cnt2 <= 0;  
-  end else if (add_cnt2) begin
-    if (end_cnt2)
-      cnt2 <= 0;   
-    else 
-      cnt2 <= cnt2 + 1;
-  end
-end
-
-assign add_cnt2 = end_cnt1;
-assign end_cnt2 = add_cnt2 && cnt2 >= 1023;
-
 //time intervals of each note
 localparam              
          
@@ -99,14 +41,114 @@ D51=120482,         //5#
 D6=113636,          //6
 D61=107296,         //6#
 D7=101215,          //7
-S=2500             //休止符
+S=2500;             //休止�???
+
+reg [16:0] cnt0;  //control the frequency of buzzer
+wire add_cnt0;
+wire end_cnt0;
+
+reg [16:0] cnt1;   //control the length of each note
+wire add_cnt1;
+wire end_cnt1;
+
+reg [10:0] cnt2;   //control the length of whole music
+wire add_cnt2;
+wire end_cnt2;
+
+reg [16:0] pre_set;
+reg [16:0] note_period;
+
+always @* begin
+  case(pre_set)
+  default: note_period = 100;
+  M1: note_period = 105;
+  M11: note_period = 111;
+  M2: note_period = 117;
+  M21: note_period = 125;
+  M3: note_period = 132;
+  M4: note_period = 139;
+  M41: note_period = 148;
+  M5: note_period = 156;
+  M51: note_period = 166;
+  M6: note_period = 176;
+  M61: note_period = 186;
+  M7: note_period = 197;
+
+  H1: note_period = 209;
+  H11: note_period = 222;
+  H2: note_period = 235;
+  H21: note_period = 248;
+  H3: note_period = 263;
+  H4: note_period = 280;
+  H41: note_period = 295;
+  H5: note_period = 313;
+  H51: note_period = 332;
+  H6: note_period = 352;
+  H61: note_period = 372;
+  H7: note_period = 395;
+
+  HH1: note_period = 418;
+  HH2: note_period = 443;
+
+  D5: note_period = 78;
+  D51: note_period = 83;
+  D6: note_period = 88;
+  D61: note_period = 93;
+  D7: note_period = 98;
+  S: note_period = 4000;
+  endcase
+end
+
+always @(posedge clk or negedge rst_n) begin
+  if (!rst_n) begin
+    cnt0 <= 0;
+  end else if (add_cnt0) begin
+    if (end_cnt0)
+      cnt0 <= 0;
+    else
+      cnt0 <= cnt0 + 1;  
+  end
+end
+
+assign add_cnt0 = 1'b1;
+assign end_cnt0 = add_cnt0 && cnt0 == pre_set - 1;
+assign beep = (cnt0 >= (pre_set / 2)) ? 1 : 0;      //second half wave is high
+
+always @(posedge clk or negedge rst_n) begin
+  if (!rst_n) begin
+    cnt1 <= 0;
+  end else if (add_cnt1) begin
+    if (end_cnt1)
+      cnt1 <= 0;
+    else
+      cnt1 <= cnt1 + 1; 
+  end
+end
+
+assign add_cnt1 = end_cnt0;
+assign end_cnt1 = add_cnt1 && cnt1 == note_period - 1;      //each note oscillate for 300 times, about 1s.
+
+always @(posedge clk or negedge rst_n) begin
+  if (!rst_n) begin
+    cnt2 <= 0;  
+  end else if (add_cnt2) begin
+    if (end_cnt2)
+      cnt2 <= 0;   
+    else 
+      cnt2 <= cnt2 + 1;
+  end
+end
+
+assign add_cnt2 = end_cnt1;
+assign end_cnt2 = add_cnt2 && cnt2 >= 1023;
+
 
 always @(posedge clk or negedge rst_n) begin
   if (!rst_n) begin
     pre_set <= 0;  
   end else begin
     case(cnt2)
-0:pre_set<=M6;
+        0:pre_set<=M6;
 				1:pre_set<=M6;
 				2:pre_set<=M2;
 				3:pre_set<=M2;
@@ -233,7 +275,7 @@ always @(posedge clk or negedge rst_n) begin
 				124:pre_set<=D6;
 				125:pre_set<=D6;
 				126:pre_set<=S;
-				127:pre_set<=S;//主旋律开始
+				127:pre_set<=S;//主旋律开�???
                 128:pre_set<=M3;
 				129:pre_set<=M3;
 				130:pre_set<=M3;
@@ -993,7 +1035,7 @@ always @(posedge clk or negedge rst_n) begin
 				884:pre_set<=S;
 				885:pre_set<=S;
 				886:pre_set<=S;
-				887:pre_set<=S;//主旋律结束
+				887:pre_set<=S;//主旋律结�???
 				888:pre_set<=M6;
 				889:pre_set<=M6;
 				890:pre_set<=S;
@@ -1137,4 +1179,3 @@ end
 
 endmodule
 
-endmodule
