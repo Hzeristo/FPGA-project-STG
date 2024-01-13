@@ -23,7 +23,6 @@ assign addr = addr_reg;
 
 
 initial begin
-    on_border = 0;
     laser_x_next = 192;
     laser_y_next = 399;
     time_reg = 0;

@@ -1,6 +1,8 @@
 module Top_module(
     input clk, rstn,        //clk & rst negative signal     
     input SW,               //switch for controlling buzzer
+    input PS2_data,         
+    input PS2_clk,    
     output hsync, vsync,    //horizontal & vertical scan signal
     output [11:0] rgb,      //rgb value to VGA port
     output buzzer           //buzzer module
@@ -37,6 +39,14 @@ end
 clkdiv_25MHz clkdiv_25MHz_unit (
     .clk(clk),
     .clk_out(clk25)
+);
+
+PS2_Interface PS2_Interface_inst (
+    .clk(clk),
+    .rst(rst),
+    .ps2_data(PS2_data),
+    .ps2_clk(PS2_clk),
+    .last_key(last_key)
 );
 
 FSM FSM_unit (
