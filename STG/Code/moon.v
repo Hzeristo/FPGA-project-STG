@@ -87,7 +87,7 @@ end
 
 always @(posedge tick or posedge reset) begin
     moon_x_next = moon_x_reg;
-    moon_x_next = moon_x_reg;
+    moon_y_next = moon_y_reg;
     if(reset) begin
         moon_x_next = 192;
         moon_y_next = 100;
@@ -131,7 +131,6 @@ always @(posedge tick or posedge reset) begin
             moon_y_next = moon_y_reg - 1;
         end
     end
-
 end
 
 always @* begin

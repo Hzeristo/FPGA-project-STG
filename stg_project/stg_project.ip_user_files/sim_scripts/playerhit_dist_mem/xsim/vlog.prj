@@ -1,0 +1,7 @@
+verilog xil_defaultlib  \
+"../../../../stg_project.gen/sources_1/ip/playerhit_dist_mem/sim/playerhit_dist_mem.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
