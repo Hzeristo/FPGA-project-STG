@@ -2,7 +2,7 @@ module player(
     input clk, reset,
     input [9:0] x, y,
     input ctrl_up, ctrl_down, ctrl_left, ctrl_right,
-    input video_on, game_state, collision,
+    input collision,
     output [9:0] player_x, player_y,
     output [11:0] rgb_out,
     output player_on

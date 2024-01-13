@@ -24,14 +24,14 @@ reg [9:0] tick_reg, tick_next;
 reg [12:0] addr_reg;
 wire [12:0] addr;
 assign addr = addr_reg;
-reg [7:0] life;
+reg [9:0] life;
 wire clk_in;
 assign clk_in = (die == 1) ? 0 : clk;
 
 initial begin
     time_reg = 0;
     tick_next = 0;
-    life = 100;
+    life = 1000;
     hecatia_x_next = 192;
     hecatia_y_next = 100;
 end
@@ -58,11 +58,11 @@ always @(posedge tick or posedge reset) begin
         hecatia_x_next = 192;
         hecatia_y_next = 100;
     end
-    else if(tick_reg > 100) begin
-        hecatia_x_next = hecatia_x_next + 1;
+    else if(tick_reg > 10000000) begin
+        hecatia_x_next = hecatia_x_reg + 1;
     end
-    else if(250 > tick_reg > 150) begin
-        hecatia_x_next = hecatia_x_next - 1;
+    else if(25000000 > tick_reg > 15000000) begin
+        hecatia_x_next = hecatia_x_reg - 1;
     end
     if(is_hit) begin
         life = life - 1;

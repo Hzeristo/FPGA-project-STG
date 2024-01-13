@@ -15,8 +15,8 @@ reg [9:0] laser_x_reg, laser_y_reg;
 reg [9:0] laser_x_next, laser_y_next;
 reg [25:0] time_reg;  
 wire [25:0] time_next;  
-assign time_next = (time_reg < TIME_MAX - speed_offset) ? time_reg + 1 : 0;        
-wire tick = (time_reg == TIME_MAX - speed_offset) ? 1 : 0;
+assign time_next = (time_reg < TIME_MAX) ? time_reg + 1 : 0;        
+wire tick = (time_reg == TIME_MAX) ? 1 : 0;
 reg [13:0] addr_reg;
 wire [13:0] addr;
 assign addr = addr_reg;
@@ -62,7 +62,7 @@ end
 laser_dist_mem laser_unit(
   .a(addr),      // input wire [10 : 0] a
   .spo(rgb_out)  // output wire [11 : 0] spo
-)
+);
 
 wire cover_on = (x >= laser_x_reg - 15 && x < laser_x_reg + 16 && y >= laser_y_reg - 23 && y < laser_y_reg + 24) ? 1 : 0;
 assign laser_on = cover_on && shooting && (rgb_out != 12'b0000_0000_0000) ? 1 : 0;

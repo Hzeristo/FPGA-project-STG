@@ -2,7 +2,6 @@ module moon(
     input clk, reset,
     input [9:0] player_x, player_y,
     input [9:0] x, y, 
-    input [25:0] speed_offset,
     output [9:0] moon_x, moon_y,
     output moon_on,
     output [11:0] rgb_out
@@ -17,8 +16,8 @@ reg [9:0] moon_x_next, moon_y_next;
 reg [25:0] delay_reg, delay_next;
 reg [25:0] time_reg;  
 wire [25:0] time_next;  
-assign time_next = (time_reg < TIME_MAX - speed_offset) ? time_reg + 1 : 0;        
-wire tick = (time_reg == TIME_MAX - speed_offset) ? 1 : 0;
+assign time_next = (time_reg < TIME_MAX) ? time_reg + 1 : 0;        
+wire tick = (time_reg == TIME_MAX) ? 1 : 0;
 reg on_border;
 reg [13:0] addr_reg;
 wire [13:0] addr;

@@ -82,6 +82,17 @@ judge_collision judge_collision_unit (
     .collision(collision)
 );
 
+judge_hit judge_hit_unit (
+    .clk(clk),
+    .rst(rst),
+    .laser_on(laser_on),
+    .laser_x(laser_x),
+    .laser_y(laser_y),
+    .hecatia_x(hecatia_x),
+    .hecatia_y(hecatia_y),
+    .hit(is_hit)
+);
+
 moon moon_unit (
     .clk(clk),
     .reset(reset),
@@ -89,11 +100,38 @@ moon moon_unit (
     .player_y(player_y),
     .x(x),
     .y(y),
-    .speed_offset(speed_offset),
     .moon_x(moon_x),
     .moon_y(moon_y),
     .moon_on(moon_on),
     .rgb_out(moon_rgb)
+);
+
+player player_unit (
+    .clk(clk),
+    .reset(reset),
+    .x(x),
+    .y(y),
+    .ctrl_up(ctrl_up),
+    .ctrl_down(ctrl_down),
+    .ctrl_left(ctrl_left),
+    .ctrl_right(ctrl_right),
+    .collision(collision),
+    .player_x(player_x),
+    .player_y(player_y),
+    .rgb_out(rgb_out),
+    .player_on(player_on)
+);
+
+laser laser_unit (
+    .clk(clk),
+    .reset(reset),
+    .x(x),
+    .y(y),
+    .player_x(player_x),
+    .player_y(player_y),
+    .shooting(shooting),
+    .rgb_out(rgb_out),
+    .laser_on(laser_on)
 );
 
 vgac vgac_unit (

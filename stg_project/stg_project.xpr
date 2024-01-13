@@ -110,6 +110,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../STG/Framework/clkdiv_25MHz.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../STG/Code/hecatia.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -124,6 +131,20 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../STG/Code/judge_hit.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../STG/Code/laser.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../STG/Code/moon.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -132,6 +153,13 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../STG/Framework/music_room.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../STG/Code/player.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -313,7 +341,6 @@
     <FileSet Name="player_dist_mem" Type="BlockSrcs" RelSrcDir="$PSRCDIR/player_dist_mem" RelGenDir="$PGENDIR/player_dist_mem">
       <File Path="$PSRCDIR/sources_1/ip/player_dist_mem/player_dist_mem.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -327,7 +354,6 @@
     <FileSet Name="laser_dist_mem" Type="BlockSrcs" RelSrcDir="$PSRCDIR/laser_dist_mem" RelGenDir="$PGENDIR/laser_dist_mem">
       <File Path="$PSRCDIR/sources_1/ip/laser_dist_mem/laser_dist_mem.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -380,7 +406,6 @@
     <FileSet Name="playerhit_dist_mem" Type="BlockSrcs" RelSrcDir="$PSRCDIR/playerhit_dist_mem" RelGenDir="$PGENDIR/playerhit_dist_mem">
       <File Path="$PSRCDIR/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
