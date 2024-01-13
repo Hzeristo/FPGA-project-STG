@@ -98,7 +98,7 @@ always @(posedge tick or posedge reset) begin
     else if(on_border) begin
         delta_x = ($signed(player_x) - $signed(moon_x_reg));
         delta_y = ($signed(player_y) - $signed(moon_y_reg));
-        if(delay_reg < 200) begin
+        if(delay_reg < 4000_0000) begin
             delay_next = delay_reg + 1;
         end
         else begin
