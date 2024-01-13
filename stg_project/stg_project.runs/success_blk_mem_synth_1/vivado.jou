@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat Jan 13 23:21:53 2024
+# Process ID: 18716
+# Current directory: D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/success_blk_mem_synth_1
+# Command line: vivado.exe -log success_blk_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source success_blk_mem.tcl
+# Log file: D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/success_blk_mem_synth_1/success_blk_mem.vds
+# Journal file: D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/success_blk_mem_synth_1\vivado.jou
+# Running On: SRZbook, OS: Windows, CPU Frequency: 3110 MHz, CPU Physical cores: 12, Host memory: 16892 MB
+#-----------------------------------------------------------
+source success_blk_mem.tcl -notrace

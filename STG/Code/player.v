@@ -4,7 +4,7 @@ module player(
     input ctrl_up, ctrl_down, ctrl_left, ctrl_right,
     input collision,
     output [9:0] player_x, player_y,
-    output [11:0] rgb_out,
+    output reg [11:0] rgb_out,
     output player_on
 );
 
@@ -16,8 +16,8 @@ reg [9:0] player_x_reg, player_y_reg;
 reg [9:0] player_x_next, player_y_next;
 reg [25:0] time_reg;  
 wire [25:0] time_next;  
-assign time_next = (time_reg < TIME_MAX - speed_offset) ? time_reg + 1 : 0;        
-wire tick = (time_reg == TIME_MAX - speed_offset) ? 1 : 0;
+assign time_next = (time_reg < TIME_MAX) ? time_reg + 1 : 0;        
+wire tick = (time_reg == TIME_MAX ) ? 1 : 0;
 reg [13:0] addr_reg;
 wire [13:0] addr;
 assign addr = addr_reg;

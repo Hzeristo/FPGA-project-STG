@@ -11,7 +11,7 @@ module Top_module(
 wire clk25;
 wire hard_reset = ~rstn;
 wire beep;
-wire enter, bomb;
+wire enter, bomb, ctrl_up, ctrl_down, ctrl_left, ctrl_right;
 assign buzzer = beep && SW;
 wire [3:0] game_state;
 wire game_en, game_reset;
@@ -30,6 +30,15 @@ wire video_off;
 wire speed_offset;
 wire [11:0] background_rgb, cover_rgb, success_rgb, gameover_rgb, hecatia_rgb, moon_rgb, player_rgb;
 wire [3:0] r,g,b;
+wire [7:0] last_key;
+
+assign ctrl_up = (last_key == 8'h1d) ? 1 : 0;
+assign ctrl_down = (last_key == 8'h1b) ? 1 : 0;
+assign ctrl_left = (last_key == 8'h1c) ? 1 : 0;
+assign ctrl_right = (last_key == 8'h23) ? 1 : 0;
+assign enter = (last_key == 8'h5a) ? 1 : 0;
+assign bomb = (last_key == 8'h22) ? 1 : 0;
+assign shooting = (last_key == 8'h1a) ? 1 : 0;
 
 initial begin
     rgb_out = 0;
@@ -41,13 +50,14 @@ clkdiv_25MHz clkdiv_25MHz_unit (
     .clk_out(clk25)
 );
 
-PS2_Interface PS2_Interface_inst (
+PS2_Interface PS2_Interface_unit (
     .clk(clk),
     .rst(rst),
     .ps2_data(PS2_data),
     .ps2_clk(PS2_clk),
     .last_key(last_key)
 );
+
 
 FSM FSM_unit (
     .clk(clk),
