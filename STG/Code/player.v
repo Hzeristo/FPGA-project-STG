@@ -5,3 +5,4 @@ module player(
     output reg [9:0] player_x, player_y,        //player's location
     );
    
+endmodule

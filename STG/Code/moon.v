@@ -10,7 +10,7 @@ module moon(
 
 localparam MAX_X = 384;
 localparam MAX_Y = 448;
-localparam TIME_MAX = 4000;         //确定tick长度
+localparam TIME_MAX = 2000000;         //确定tick长度
 
 reg [9:0] moon_x_reg, moon_y_reg;
 reg [9:0] moon_x_next, moon_y_next;

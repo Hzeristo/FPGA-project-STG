@@ -29,7 +29,7 @@ wire bomb_posedge = bomb & ~bomb_reg;
 
 initial begin
     game_state <= Initial;
-    timeout_reg <= 2000;       //2000_0000
+    timeout_reg <= 2000_000;       //2000_0000
     num_life <= 3;
     num_bomb <= 3;
 	game_en  <= 0;
@@ -42,7 +42,7 @@ always @(posedge clk or posedge hard_reset)
 		enter_reg <= 0;
         bomb_reg <= 0;
 		game_state <= Initial;				//initialization
-		timeout_reg <= 2000;			//reset collision timer, should be 2000_0000
+		timeout_reg <= 2000_0000;			//reset collision timer, should be 2000_0000
 		num_life <= 3;
         num_bomb <= 3;
 		game_en  <= 0;
@@ -85,7 +85,7 @@ always @* begin
         if(bomb && num_bomb > 0) begin
             num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;
-            timeout_next = 4000;
+            timeout_next = 4000_0000;
         end	
         if(die) begin
             game_state_next = Success;
@@ -99,7 +99,7 @@ always @* begin
 			else begin
 				num_life_next = num_life - 1; 	
 				game_state_next = Collision;
-				timeout_next = 2000; 	
+				timeout_next = 2000_0000; 	
 			end
 		end
 	end
@@ -107,7 +107,7 @@ always @* begin
         if(bomb && num_bomb > 0) begin
             num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;
-            timeout_next = 4000;
+            timeout_next = 2000_0000;
         end
         if(die) begin
             game_state_next = Success;
@@ -134,6 +134,7 @@ always @* begin
             num_bomb_next = 3;
             game_reset = 1;          
             timeout_next = 0;
+            game_en_next = 0;
             game_state_next = Initial;	             			       			
 		end
     end
@@ -141,7 +142,8 @@ always @* begin
 		if(enter_posedge) begin            			
 			num_life_next = 3;
             num_bomb_next = 3;
-            timeout_next = 0;             			
+            timeout_next = 0;  
+            game_en_next = 0;           			
 			game_state_next = Initial;		
 			game_reset = 1;          			
 		end
