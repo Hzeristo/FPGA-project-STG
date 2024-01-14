@@ -1,11 +1,9 @@
 module hecatia(
     input clk, reset,
-    input [9:0] player_x, player_y,
     input [9:0] x, y, 
-    input [25:0] speed_offset,
     input is_hit,
     output hecatia_on,
-    input [9:0] hecatia_x, hecatia_y,
+    output [9:0] hecatia_x, hecatia_y,
     output [11:0] rgb_out,
     output [7:0] health,
     output die
@@ -18,8 +16,8 @@ reg [9:0] hecatia_x_reg, hecatia_y_reg;
 reg [9:0] hecatia_x_next, hecatia_y_next;
 reg [25:0] time_reg;  
 wire [25:0] time_next;  
-assign time_next = (time_reg < TIME_MAX - speed_offset) ? time_reg + 1 : 0;        
-wire tick = (time_reg == TIME_MAX - speed_offset) ? 1 : 0;
+assign time_next = (time_reg < TIME_MAX) ? time_reg + 1 : 0;        
+wire tick = (time_reg == TIME_MAX) ? 1 : 0;
 reg [9:0] tick_reg, tick_next;
 reg [12:0] addr_reg;
 wire [12:0] addr;
@@ -38,8 +36,10 @@ end
 
 always @(posedge clk_in or posedge reset) begin
     if (reset) begin
-        time_reg <= 0;
-        tick_reg <= 0;
+        time_reg = 0;
+        tick_reg = 0;
+        hecatia_x_next = 192;
+        hecatia_y_next = 100;
     end
     else begin
         hecatia_x_reg <= hecatia_x_next;
@@ -49,7 +49,7 @@ always @(posedge clk_in or posedge reset) begin
     end
 end
 
-always @(posedge tick or posedge reset) begin
+always @(posedge tick) begin
     hecatia_x_next = hecatia_x_reg;
     hecatia_x_next = hecatia_x_reg;
     tick_next = tick_reg;

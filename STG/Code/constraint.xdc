@@ -35,7 +35,9 @@ set_property PACKAGE_PIN M21 [get_ports vsync]
     set_property IOSTANDARD LVCMOS33 [get_ports vsync]
 
 set_property PACKAGE_PIN AA10 [get_ports SW]
-    set_property IOSTANDARD LVCMOS33 [get_ports SW]
+    set_property IOSTANDARD LVCMOS15 [get_ports SW]
+set_property PACKAGE_PIN AF10 [get_ports rstn]
+    set_property IOSTANDARD LVCMOS15 [get_ports rstn]
 
 set_property PACKAGE_PIN N18 [get_ports PS2_clk]					
 	set_property IOSTANDARD LVCMOS33 [get_ports PS2_clk]

@@ -4,6 +4,7 @@ module laser(
     input [9:0] player_x, player_y,
     input shooting,
     output [11:0] rgb_out,
+    output [9:0] laser_x, laser_y,
     output laser_on
 );
 
@@ -31,6 +32,10 @@ end
 always @(posedge clk or posedge reset) begin
     if (reset) begin
         time_reg <= 0;
+        laser_x_next <= 192;
+        laser_y_next <= 399;
+        laser_x_reg <= laser_x_next;
+        laser_y_reg <= laser_y_next;
     end
     else begin
         laser_x_reg <= laser_x_next;
@@ -55,6 +60,9 @@ end
 always @* begin
     if(x >= laser_x_reg && x < laser_x_reg + 16 && y >= 0 && y < laser_y_reg) begin
         addr_reg = x - laser_x_reg + y * 16;
+    end
+    else begin
+        addr_reg = 0;
     end
 end
 

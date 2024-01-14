@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Jan 13 23:42:59 2024
-# Process ID: 30440
+# Start of session at: Sun Jan 14 10:45:38 2024
+# Process ID: 9712
 # Current directory: D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1
 # Command line: vivado.exe -log Top_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_module.tcl
 # Log file: D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/Top_module.vds
@@ -12,7 +12,7 @@
 # Running On: SRZbook, OS: Windows, CPU Frequency: 3110 MHz, CPU Physical cores: 12, Host memory: 16892 MB
 #-----------------------------------------------------------
 source Top_module.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 443.234 ; gain = 163.891
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 444.793 ; gain = 166.945
 Command: read_checkpoint -auto_incremental -incremental D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/utils_1/imports/synth_1/Top_module.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/utils_1/imports/synth_1/Top_module.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -21,3 +21,683 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t'
 INFO: [Device 21-403] Loading part xc7k160tffg676-2L
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 22496
+INFO: [Synth 8-11241] undeclared symbol 'shooting', assumed default net type 'wire' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:41]
+INFO: [Synth 8-11241] undeclared symbol 'rst', assumed default net type 'wire' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:106]
+INFO: [Synth 8-11241] undeclared symbol 'laser_on', assumed default net type 'wire' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:119]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1300.074 ; gain = 410.391
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_module' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clkdiv_25MHz' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/clkdiv_25MHz.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'clkdiv_25MHz' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/clkdiv_25MHz.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PS2_Interface' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/keyboard.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PS2_Interface' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/keyboard.v:1]
+INFO: [Synth 8-6157] synthesizing module 'FSM' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'FSM' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v:1]
+INFO: [Synth 8-6157] synthesizing module 'player' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:1]
+INFO: [Synth 8-6157] synthesizing module 'player_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/player_dist_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'player_dist_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/player_dist_mem_stub.v:6]
+WARNING: [Synth 8-689] width (14) of port connection 'a' does not match port width (11) of module 'player_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:94]
+INFO: [Synth 8-6157] synthesizing module 'playerhit_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/playerhit_dist_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'playerhit_dist_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/playerhit_dist_mem_stub.v:6]
+WARNING: [Synth 8-689] width (14) of port connection 'a' does not match port width (11) of module 'playerhit_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'player' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:1]
+WARNING: [Synth 8-7071] port 'player_x' of module 'player' is unconnected for instance 'player_unit' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:76]
+WARNING: [Synth 8-7071] port 'player_y' of module 'player' is unconnected for instance 'player_unit' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:76]
+WARNING: [Synth 8-7023] instance 'player_unit' of module 'player' has 13 connections declared, but only 11 given [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:76]
+INFO: [Synth 8-6157] synthesizing module 'hecatia' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:1]
+INFO: [Synth 8-6157] synthesizing module 'hecatia_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/hecatia_dist_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hecatia_dist_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/hecatia_dist_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hecatia' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:1]
+INFO: [Synth 8-6157] synthesizing module 'judge_collision' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_collision.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'judge_collision' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_collision.v:1]
+INFO: [Synth 8-6157] synthesizing module 'judge_hit' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_hit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'judge_hit' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_hit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'moon' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/moon.v:1]
+INFO: [Synth 8-6157] synthesizing module 'moon_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/moon_dist_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'moon_dist_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/moon_dist_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'moon' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/moon.v:1]
+INFO: [Synth 8-6157] synthesizing module 'laser' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:1]
+INFO: [Synth 8-6157] synthesizing module 'laser_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/laser_dist_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'laser_dist_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/laser_dist_mem_stub.v:6]
+WARNING: [Synth 8-689] width (14) of port connection 'a' does not match port width (13) of module 'laser_dist_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'laser' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:1]
+WARNING: [Synth 8-7071] port 'laser_x' of module 'laser' is unconnected for instance 'laser_unit' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:140]
+WARNING: [Synth 8-7071] port 'laser_y' of module 'laser' is unconnected for instance 'laser_unit' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:140]
+WARNING: [Synth 8-7023] instance 'laser_unit' of module 'laser' has 11 connections declared, but only 9 given [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:140]
+INFO: [Synth 8-6157] synthesizing module 'vgac' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/vgac.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'vgac' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/vgac.v:1]
+INFO: [Synth 8-6157] synthesizing module 'background' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/background.v:1]
+INFO: [Synth 8-6157] synthesizing module 'background_blk_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/background_blk_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'background_blk_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/background_blk_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'background' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/background.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cover_blk_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/cover_blk_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cover_blk_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/cover_blk_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (19) of module 'cover_blk_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:176]
+INFO: [Synth 8-6157] synthesizing module 'success_blk_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/success_blk_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'success_blk_mem' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/.Xil/Vivado-9712-SRZbook/realtime/success_blk_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (19) of module 'success_blk_mem' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:190]
+INFO: [Synth 8-6157] synthesizing module 'music_room' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/music_room.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'music_room' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/music_room.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Top_module' (0#1) [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:1]
+WARNING: [Synth 8-7137] Register last_key_reg in module PS2_Interface has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/keyboard.v:37]
+WARNING: [Synth 8-7137] Register time_reg_reg in module player has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:19]
+WARNING: [Synth 8-7137] Register player_x_reg_reg in module player has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:43]
+WARNING: [Synth 8-7137] Register player_y_reg_reg in module player has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:44]
+WARNING: [Synth 8-6014] Unused sequential element tick_reg_reg was removed.  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:40]
+WARNING: [Synth 8-6014] Unused sequential element tick_next_reg was removed.  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:55]
+WARNING: [Synth 8-7137] Register time_reg_reg in module hecatia has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:19]
+WARNING: [Synth 8-7137] Register hecatia_x_reg_reg in module hecatia has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:45]
+WARNING: [Synth 8-7137] Register hecatia_y_reg_reg in module hecatia has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:46]
+WARNING: [Synth 8-7137] Register delay_next_reg in module moon has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/moon.v:62]
+WARNING: [Synth 8-3848] Net player_x in module/entity Top_module does not have driver. [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:22]
+WARNING: [Synth 8-3848] Net player_y in module/entity Top_module does not have driver. [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:22]
+WARNING: [Synth 8-3848] Net rst in module/entity Top_module does not have driver. [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:106]
+WARNING: [Synth 8-3848] Net laser_x in module/entity Top_module does not have driver. [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:25]
+WARNING: [Synth 8-3848] Net laser_y in module/entity Top_module does not have driver. [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v:25]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1403.465 ; gain = 513.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1403.465 ; gain = 513.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1403.465 ; gain = 513.781
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1403.465 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/moon_dist_mem/moon_dist_mem/moon_dist_mem_in_context.xdc] for cell 'moon_unit/moon_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/moon_dist_mem/moon_dist_mem/moon_dist_mem_in_context.xdc] for cell 'moon_unit/moon_unit'
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/hecatia_dist_mem/hecatia_dist_mem/hecatia_dist_mem_in_context.xdc] for cell 'hecatia_unit/hecatia_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/hecatia_dist_mem/hecatia_dist_mem/hecatia_dist_mem_in_context.xdc] for cell 'hecatia_unit/hecatia_unit'
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/player_dist_mem/player_dist_mem/player_dist_mem_in_context.xdc] for cell 'player_unit/player_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/player_dist_mem/player_dist_mem/player_dist_mem_in_context.xdc] for cell 'player_unit/player_unit'
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/laser_dist_mem/laser_dist_mem/laser_dist_mem_in_context.xdc] for cell 'laser_unit/laser_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/laser_dist_mem/laser_dist_mem/laser_dist_mem_in_context.xdc] for cell 'laser_unit/laser_unit'
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/background_blk_mem/background_blk_mem/background_blk_mem_in_context.xdc] for cell 'background_unit/background_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/background_blk_mem/background_blk_mem/background_blk_mem_in_context.xdc] for cell 'background_unit/background_unit'
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/cover_blk_mem/cover_blk_mem/cover_blk_mem_in_context.xdc] for cell 'cover_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/cover_blk_mem/cover_blk_mem/cover_blk_mem_in_context.xdc] for cell 'cover_unit'
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem/playerhit_dist_mem_in_context.xdc] for cell 'player_unit/playerhit_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem/playerhit_dist_mem_in_context.xdc] for cell 'player_unit/playerhit_unit'
+Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/success_blk_mem/success_blk_mem/success_blk_mem_in_context.xdc] for cell 'success_unit'
+Finished Parsing XDC File [d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/success_blk_mem/success_blk_mem/success_blk_mem_in_context.xdc] for cell 'success_unit'
+Parsing XDC File [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/constraint.xdc]
+Finished Parsing XDC File [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_module_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1505.906 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1505.906 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'cover_unit' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'success_unit' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'background_unit/background_unit' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k160tffg676-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for moon_unit/moon_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hecatia_unit/hecatia_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for player_unit/player_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for laser_unit/laser_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for background_unit/background_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for cover_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for player_unit/playerhit_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for success_unit. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'game_state_reg' in module 'FSM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 Initial |                              000 |                             0000
+                   Start |                              001 |                             0001
+                    Play |                              010 |                             0010
+                Gameover |                              011 |                             1001
+               Collision |                              100 |                             1010
+                    Bomb |                              101 |                             0110
+                 Success |                              110 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'game_state_reg' using encoding 'sequential' in module 'FSM'
+WARNING: [Synth 8-327] inferring latch for variable 'addr_reg_reg' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:24]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:34 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 15    
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input   26 Bit       Adders := 1     
+	   2 Input   21 Bit       Adders := 2     
+	   3 Input   14 Bit       Adders := 2     
+	   3 Input   13 Bit       Adders := 1     
+	   3 Input   12 Bit       Adders := 7     
+	   2 Input   12 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 6     
+	   2 Input   10 Bit       Adders := 9     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               26 Bit    Registers := 5     
+	               17 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 14    
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Multipliers : 
+	              32x32  Multipliers := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	   3 Input   26 Bit        Muxes := 1     
+	   2 Input   26 Bit        Muxes := 3     
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   18 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 2     
+	  33 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 16    
+	   3 Input   10 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 2     
+	   7 Input    4 Bit        Muxes := 3     
+	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 6     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 22    
+	   7 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP addr_reg1, operation Mode is: A*(B:0x60).
+DSP Report: operator addr_reg1 is absorbed into DSP addr_reg1.
+DSP Report: Generating DSP addr_reg0, operation Mode is: PCIN+(A:0x0):B+(C:0x1f).
+DSP Report: operator addr_reg0 is absorbed into DSP addr_reg0.
+DSP Report: Generating DSP collision3, operation Mode is: A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP collision3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP collision3, operation Mode is: A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP collision3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP collision3, operation Mode is: A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP collision3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP collision3, operation Mode is: A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP collision3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: operator collision3 is absorbed into DSP collision3.
+DSP Report: Generating DSP addr0, operation Mode is: C+A*(B:0x180).
+DSP Report: operator addr0 is absorbed into DSP addr0.
+DSP Report: operator addr1 is absorbed into DSP addr0.
+DSP Report: Generating DSP addra0, operation Mode is: C+A*(B:0x280).
+DSP Report: operator addra0 is absorbed into DSP addra0.
+DSP Report: operator addra1 is absorbed into DSP addra0.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[9]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[8]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[7]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[6]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[5]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[4]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[3]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[2]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[1]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_x_next_reg[0]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[9]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[8]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[7]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[6]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[5]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[4]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[3]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[2]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[1]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'player_unit/player_y_next_reg[0]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[9]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[8]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[7]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[6]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[5]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[4]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[3]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[2]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[1]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_x_next_reg[0]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:41]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[9]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[8]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[7]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[6]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[5]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[4]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[3]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[2]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[1]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'hecatia_unit/hecatia_y_next_reg[0]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v:42]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[9]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[8]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[7]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[6]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[5]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[4]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[3]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[2]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[1]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'laser_unit/laser_x_next_reg[0]__0/Q' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v:36]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:56 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|music_room  | pre_set    | 2048x17       | LUT            | 
+|music_room  | pre_set    | 2048x17       | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping             | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|hecatia         | A*(B:0x60)              | 13     | 7      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|hecatia         | PCIN+(A:0x0):B+(C:0x1f) | 30     | 10     | 5      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|judge_collision | A*B                     | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | (PCIN>>17)+A*B          | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | (PCIN>>17)+A*B          | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | A*B                     | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | (PCIN>>17)+A*B          | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | (PCIN>>17)+A*B          | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|background      | C+A*(B:0x180)           | 10     | 9      | 10     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|Top_module      | C+A*(B:0x280)           | 10     | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++----------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:01:14 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:01:15 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[25]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[25]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[24]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[24]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[23]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[23]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[22]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[22]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[21]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[21]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[20]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[20]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[19]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[19]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[18]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[18]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[17]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[17]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[16]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[16]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[15]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[15]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[14]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[14]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[13]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[13]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[12]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[12]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[11]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[11]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[10]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[10]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[9]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[9]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[8]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[8]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[7]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[7]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[6]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[6]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[5]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[5]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[4]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[4]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[3]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[3]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[2]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[2]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[1]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[1]_P) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[0]_LDC) is unused and will be removed from module Top_module.
+WARNING: [Synth 8-3332] Sequential element (moon_unit/delay_next_reg[0]_P) is unused and will be removed from module Top_module.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:01:18 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:01:26 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:01:26 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:01:26 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:01:26 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:01:26 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:01:26 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|hecatia         | A*B          | 13     | 7      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|hecatia         | PCIN+A':B'+C | 0      | 9      | -      | -      | 13     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|judge_collision | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | PCIN>>17+A*B | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|judge_collision | PCIN>>17+A*B | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Top_module      | C'+A'*B      | 10     | 10     | 9      | -      | 19     | 1    | 0    | 0    | -    | -     | 0    | 0    | 
+|background      | C'+A'*B      | 10     | 9      | 9      | -      | 18     | 1    | 0    | 0    | -    | -     | 0    | 0    | 
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+-------------------+----------+
+|      |BlackBox name      |Instances |
++------+-------------------+----------+
+|1     |player_dist_mem    |         1|
+|2     |playerhit_dist_mem |         1|
+|3     |hecatia_dist_mem   |         1|
+|4     |cover_blk_mem      |         1|
+|5     |success_blk_mem    |         1|
+|6     |background_blk_mem |         1|
+|7     |laser_dist_mem     |         1|
+|8     |moon_dist_mem      |         1|
++------+-------------------+----------+
+
+Report Cell Usage: 
++------+-------------------+------+
+|      |Cell               |Count |
++------+-------------------+------+
+|1     |background_blk_mem |     1|
+|2     |cover_blk_mem      |     1|
+|3     |hecatia_dist_mem   |     1|
+|4     |laser_dist_mem     |     1|
+|5     |moon_dist_mem      |     1|
+|6     |player_dist_mem    |     1|
+|7     |playerhit_dist_mem |     1|
+|8     |success_blk_mem    |     1|
+|9     |BUFG               |     3|
+|10    |CARRY4             |   143|
+|11    |DSP48E1            |    10|
+|14    |LUT1               |   134|
+|15    |LUT2               |   235|
+|16    |LUT3               |   130|
+|17    |LUT4               |   142|
+|18    |LUT5               |   196|
+|19    |LUT6               |   358|
+|20    |MUXF7              |    28|
+|21    |FDCE               |   102|
+|22    |FDPE               |    17|
+|23    |FDRE               |   196|
+|24    |LD                 |    13|
+|25    |IBUF               |     5|
+|26    |OBUF               |    15|
++------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:01:26 . Memory (MB): peak = 1505.906 ; gain = 616.223
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 180 critical warnings and 54 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:01:22 . Memory (MB): peak = 1505.906 ; gain = 513.781
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:01:27 . Memory (MB): peak = 1505.906 ; gain = 616.223
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1515.711 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 194 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1521.594 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  LD => LDCE: 13 instances
+
+Synth Design complete | Checksum: 6d2fe943
+INFO: [Common 17-83] Releasing license: Synthesis
+70 Infos, 83 Warnings, 160 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:01:37 . Memory (MB): peak = 1521.594 ; gain = 1042.941
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/Top_module.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_module_utilization_synth.rpt -pb Top_module_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 14 10:47:26 2024...

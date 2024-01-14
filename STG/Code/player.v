@@ -21,11 +21,15 @@ wire tick = (time_reg == TIME_MAX ) ? 1 : 0;
 reg [13:0] addr_reg;
 wire [13:0] addr;
 assign addr = addr_reg;
-reg [11:0] rgb_out1, rgb_out2;
+wire [11:0] rgb_out1, rgb_out2;
 wire up, down, left, right;
 
+assign up = (ctrl_up)? 1 : 0;
+assign down = (ctrl_down)? 1 : 0;
+assign left = (ctrl_left)? 1 : 0;
+assign right = (ctrl_right)? 1 : 0;
+
 initial begin
-    on_border = 0;
     player_x_next = 192;
     player_y_next = 400;
     time_reg = 0;
@@ -33,7 +37,11 @@ end
 
 always @(posedge clk or posedge reset) begin
     if (reset) begin
-        time_reg <= 0;
+        time_reg = 0;
+        player_x_next = 192;
+        player_y_next = 400;
+        player_x_reg = player_x_next;
+        player_y_reg = player_y_next;
     end
     else begin
         player_x_reg <= player_x_next;
@@ -76,6 +84,9 @@ end
 always @* begin
     if(x >= player_x_reg - 15 && x < player_x_reg + 16 && y >= player_y_reg - 23 && y < player_y_reg + 24) begin
         addr_reg = x - player_x_reg + 15 + (y - player_y_reg + 23) * 32;
+    end
+    else begin
+        addr_reg = 0;
     end
 end
 

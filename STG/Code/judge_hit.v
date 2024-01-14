@@ -11,7 +11,7 @@ always @(posedge clk or posedge rst) begin
     if(rst)
 	   hit = 0;
 	else begin
-        if((laser_x >= hecatia_x - 30 && laser_x < hecatia_x + 31 && laser_y < hecatia_y - 40))
+        if((laser_x >= hecatia_x - 30 && laser_x < hecatia_x + 31 && laser_y < hecatia_y - 40 && laser_on))
             hit = 1;
 	end
 end

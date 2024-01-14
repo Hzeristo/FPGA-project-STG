@@ -82,7 +82,7 @@ always @* begin
 		end
     end
     Play: begin
-        if(bomb && num_bomb > 0) begin
+        if(bomb_posedge && num_bomb > 0) begin
             num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;
             timeout_next = 4000_0000;

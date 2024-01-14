@@ -22,10 +22,6 @@ reg on_border;
 reg [13:0] addr_reg;
 wire [13:0] addr;
 assign addr = addr_reg;
-reg state;
-reg start;
-reg signed [9:0] delta_x, delta_y;
-
 
 initial begin
     on_border = 0;
@@ -33,31 +29,7 @@ initial begin
     moon_x_next = 192;
     moon_y_next = 100;
     time_reg = 0;
-    state = 0;
-    start = 0;
 end
-
- always @(posedge clk or posedge reset) begin
-    if (reset) begin
-      state <= 2'b00;
-      start <= 0;
-    end
-    else begin
-      case (state)
-        1'b0:begin
-            if(time_reg == 10) begin
-                start <= 1;
-                state <= 1'b1;
-            end
-        end
-        1'b1: begin
-            if(time_reg == 20) begin
-                start <= 0;
-            end
-        end
-      endcase
-    end
-  end
 
 always @* begin
     if(moon_x_reg == 0||moon_x_reg == 384||moon_y_reg == 0||moon_y_reg == 448)begin
@@ -68,7 +40,7 @@ always @* begin
     end
 end
 
-always @(posedge clk or posedge reset) begin
+always @(posedge clk) begin
     if (reset) begin
         time_reg <= 0;
     end
@@ -78,10 +50,7 @@ always @(posedge clk or posedge reset) begin
         delay_reg <= delay_next;
         time_reg <= time_next;
     end
-    if(start) begin
-        delta_x = ($signed(player_x) - $signed(moon_x_reg));
-        delta_y = ($signed(player_y) - $signed(moon_y_reg));
-    end
+
 end
 
 always @(posedge tick or posedge reset) begin
@@ -90,24 +59,20 @@ always @(posedge tick or posedge reset) begin
     if(reset) begin
         moon_x_next = 192;
         moon_y_next = 100;
-        if(delay_reg < 200) begin
-            delay_next = delay_reg + 1;
-        end
+        delay_next = 0;
     end
     else if(on_border) begin
-        delta_x = ($signed(player_x) - $signed(moon_x_reg));
-        delta_y = ($signed(player_y) - $signed(moon_y_reg));
         if(delay_reg < 4000_0000) begin
             delay_next = delay_reg + 1;
         end
         else begin
-            if(delta_x > 0) begin 
+            if(player_x > moon_x_reg) begin 
                 moon_x_next = moon_x_reg + 1;
             end
             else begin
                 moon_x_next = moon_x_reg - 1;
             end
-            if(delta_y > 0) begin 
+            if(player_y > moon_y_reg) begin 
                 moon_y_next = moon_y_reg + 1;
             end
             else begin
@@ -117,13 +82,13 @@ always @(posedge tick or posedge reset) begin
     end
     else begin
         delay_next <= 0;
-        if(delta_x > 0) begin 
+        if(player_x > moon_x_reg) begin 
             moon_x_next = moon_x_reg + 1;
         end
         else begin
             moon_x_next = moon_x_reg - 1;
         end
-        if(delta_y > 0) begin 
+        if(player_y > moon_y_reg) begin 
             moon_y_next = moon_y_reg + 1;
         end
         else begin
@@ -135,6 +100,9 @@ end
 always @* begin
     if(x >= moon_x_reg - 63 && x <= moon_x_reg + 64 && y >= moon_y_reg - 63 && y <= moon_y_reg + 64) begin
         addr_reg = x - moon_x_reg + 63 + (y - moon_y_reg + 63) * 128;
+    end
+    else begin
+        addr_reg = 0;
     end
 end
 

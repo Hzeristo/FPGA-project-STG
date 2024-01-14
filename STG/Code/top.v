@@ -22,13 +22,13 @@ wire [9:0] x, y;
 wire [9:0] player_x, player_y;
 wire [9:0] hecatia_x, hecatia_y;
 wire [9:0] moon_x, moon_y;
+wire [9:0] laser_x, laser_y;
 wire hecatia_on, is_hit;
 wire [7:0] health;
 wire moon_on, player_on;
 reg [11:0] rgb_out, rgb_next;
 wire video_off;
-wire speed_offset;
-wire [11:0] background_rgb, cover_rgb, success_rgb, gameover_rgb, hecatia_rgb, moon_rgb, player_rgb;
+wire [11:0] background_rgb, cover_rgb, success_rgb, /*gameover_rgb*/ hecatia_rgb, moon_rgb, player_rgb, laser_rgb;
 wire [3:0] r,g,b;
 wire [7:0] last_key;
 
@@ -52,7 +52,7 @@ clkdiv_25MHz clkdiv_25MHz_unit (
 
 PS2_Interface PS2_Interface_unit (
     .clk(clk),
-    .rst(rst),
+    .rst(reset),
     .ps2_data(PS2_data),
     .ps2_clk(PS2_clk),
     .last_key(last_key)
@@ -73,14 +73,25 @@ FSM FSM_unit (
     .game_reset(game_reset)
 );
 
+player player_unit (
+    .clk(clk),
+    .reset(reset),
+    .x(x),
+    .y(y),
+    .ctrl_up(ctrl_up),
+    .ctrl_down(ctrl_down),
+    .ctrl_left(ctrl_left),
+    .ctrl_right(ctrl_right),
+    .collision(collision),
+    .rgb_out(player_rgb),
+    .player_on(player_on)
+);
+
 hecatia hecatia_unit (
     .clk(clk),
     .reset(reset),
-    .player_x(player_x),
-    .player_y(player_y),
     .x(x),
     .y(y),
-    .speed_offset(speed_offset),
     .is_hit(is_hit),
     .hecatia_on(hecatia_on),
     .hecatia_x(hecatia_x),
@@ -126,22 +137,6 @@ moon moon_unit (
     .rgb_out(moon_rgb)
 );
 
-player player_unit (
-    .clk(clk),
-    .reset(reset),
-    .x(x),
-    .y(y),
-    .ctrl_up(ctrl_up),
-    .ctrl_down(ctrl_down),
-    .ctrl_left(ctrl_left),
-    .ctrl_right(ctrl_right),
-    .collision(collision),
-    .player_x(player_x),
-    .player_y(player_y),
-    .rgb_out(rgb_out),
-    .player_on(player_on)
-);
-
 laser laser_unit (
     .clk(clk),
     .reset(reset),
@@ -150,7 +145,7 @@ laser laser_unit (
     .player_x(player_x),
     .player_y(player_y),
     .shooting(shooting),
-    .rgb_out(rgb_out),
+    .rgb_out(laser_rgb),
     .laser_on(laser_on)
 );
 
@@ -182,12 +177,12 @@ cover_blk_mem cover_unit (
   .douta(cover_rgb)  // output wire [11 : 0] douta
 );
 
-gameover_blk_mem gameover_unit(
+/* gameover_blk_mem gameover_unit(
   .clka(clk),    // input wire clka
   .ena(1),      // input wire ena
   .addra(y*640+x),  // input wire [18 : 0] addra
   .douta(gameover_rgb)  // output wire [11 : 0] douta
-);
+); */
 
 success_blk_mem success_unit (
   .clka(clk),    // input wire clka
@@ -207,7 +202,7 @@ always @* begin
         rgb_next = success_rgb;
     end
     else if(game_state == 4'b1001) begin
-        rgb_next = gameover_rgb;
+        rgb_next = success_rgb;
     end
     else if(game_en && moon_on) begin
         rgb_next = moon_rgb;
@@ -216,6 +211,9 @@ always @* begin
         rgb_next = hecatia_rgb;
     end
     else if(game_en && player_on) begin
+        rgb_next = player_rgb;
+    end
+    else if(game_en && laser_on) begin
         rgb_next = player_rgb;
     end
     else begin

@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k160tffg676-2L
 
@@ -102,6 +103,7 @@ read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_collision.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_hit.v
+  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/keyboard.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/moon.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/music_room.v
@@ -123,9 +125,6 @@ set_property used_in_implementation false [get_files -all d:/CodesPractice/learn
 
 read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/background_blk_mem/background_blk_mem.xci
 set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/background_blk_mem/background_blk_mem_ooc.xdc]
-
-read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/gameover_blk_mem/gameover_blk_mem.xci
-set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/gameover_blk_mem/gameover_blk_mem_ooc.xdc]
 
 read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/cover_blk_mem/cover_blk_mem.xci
 set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/cover_blk_mem/cover_blk_mem_ooc.xdc]
