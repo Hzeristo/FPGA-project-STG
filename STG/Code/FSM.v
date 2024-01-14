@@ -82,6 +82,7 @@ always @* begin
 		end
     end
     Play: begin
+        game_en_next = 1;
         if(bomb_posedge && num_bomb > 0) begin
             num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;

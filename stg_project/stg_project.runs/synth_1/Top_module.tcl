@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k160tffg676-2L
 
@@ -95,11 +96,12 @@ add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/background
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/gameover/gameover.coe}}
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/cover/cover.coe}}
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/success/success.coe}}
-add_files {{d:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/playerhit/playerhit.coe}}
+add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/playerhit/playerhit.coe}}
 read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/background.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/clkdiv_25MHz.v
+  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/cover.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_collision.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_hit.v
@@ -108,6 +110,7 @@ read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/moon.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/music_room.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/player.v
+  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/success.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/vgac.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v
 }
@@ -129,7 +132,7 @@ set_property used_in_implementation false [get_files -all d:/CodesPractice/learn
 read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/cover_blk_mem/cover_blk_mem.xci
 set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/cover_blk_mem/cover_blk_mem_ooc.xdc]
 
-read_ip -quiet d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem.xci
+read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem.xci
 set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem_ooc.xdc]
 
 read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/success_blk_mem/success_blk_mem.xci

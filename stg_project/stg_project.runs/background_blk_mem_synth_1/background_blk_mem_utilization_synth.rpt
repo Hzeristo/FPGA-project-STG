@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Thu Jan  4 17:28:28 2024
+| Date         : Sun Jan 14 12:49:41 2024
 | Host         : SRZbook running 64-bit major release  (build 9200)
 | Command      : report_utilization -file background_blk_mem_utilization_synth.rpt -pb background_blk_mem_utilization_synth.pb
 | Design       : background_blk_mem
@@ -155,15 +155,15 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  111 |                 LUT |
+| LUT6     |  152 |                 LUT |
 | RAMB36E1 |   57 |        Block Memory |
-| LUT5     |   46 |                 LUT |
 | MUXF7    |   45 |               MuxFx |
-| LUT4     |    9 |                 LUT |
+| LUT5     |   14 |                 LUT |
 | FDRE     |    6 |        Flop & Latch |
 | RAMB18E1 |    2 |        Block Memory |
-| LUT3     |    2 |                 LUT |
 | LUT2     |    2 |                 LUT |
+| LUT4     |    1 |                 LUT |
+| LUT3     |    1 |                 LUT |
 +----------+------+---------------------+
 
 

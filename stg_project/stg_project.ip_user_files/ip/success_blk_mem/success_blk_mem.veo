@@ -56,7 +56,6 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 success_blk_mem your_instance_name (
   .clka(clka),    // input wire clka
-  .ena(ena),      // input wire ena
   .addra(addra),  // input wire [18 : 0] addra
   .douta(douta)  // output wire [11 : 0] douta
 );

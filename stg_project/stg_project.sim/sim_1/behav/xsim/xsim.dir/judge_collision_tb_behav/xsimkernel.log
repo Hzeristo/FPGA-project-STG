@@ -1,7 +1,0 @@
-Running: xsim.dir/judge_collision_tb_behav/xsimk.exe -simmode gui -wdb judge_collision_tb_behav.wdb -simrunnum 0 -socket 64590
-Design successfully loaded
-Design Loading Memory Usage: 7980 KB (Peak: 7980 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 8592 KB (Peak: 8592 KB)
-Simulation CPU Usage: 0 ms

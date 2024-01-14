@@ -18,8 +18,8 @@ reg [25:0] time_reg;
 wire [25:0] time_next;  
 assign time_next = (time_reg < TIME_MAX) ? time_reg + 1 : 0;        
 wire tick = (time_reg == TIME_MAX) ? 1 : 0;
-reg [13:0] addr_reg;
-wire [13:0] addr;
+reg [12:0] addr_reg;
+wire [12:0] addr;
 assign addr = addr_reg;
 
 

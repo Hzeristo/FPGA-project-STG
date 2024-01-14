@@ -123,6 +123,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
+  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7k160tffg676-2L
@@ -144,7 +145,7 @@ OPTRACE "add files" START { }
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/laser_dist_mem/laser_dist_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/background_blk_mem/background_blk_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/cover_blk_mem/cover_blk_mem.xci
-  read_ip -quiet d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem.xci
+  read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/success_blk_mem/success_blk_mem.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/constraint.xdc

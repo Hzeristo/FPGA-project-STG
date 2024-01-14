@@ -83,6 +83,8 @@ player player_unit (
     .ctrl_left(ctrl_left),
     .ctrl_right(ctrl_right),
     .collision(collision),
+    .player_x(player_x),
+    .player_y(player_y),
     .rgb_out(player_rgb),
     .player_on(player_on)
 );
@@ -103,7 +105,7 @@ hecatia hecatia_unit (
 
 judge_collision judge_collision_unit (
     .clk(clk),
-    .rst(rst),
+    .rst(reset),
     .player_x(player_x),
     .player_y(player_y),
     .moon_x(moon_x),
@@ -115,7 +117,7 @@ judge_collision judge_collision_unit (
 
 judge_hit judge_hit_unit (
     .clk(clk),
-    .rst(rst),
+    .rst(reset),
     .laser_on(laser_on),
     .laser_x(laser_x),
     .laser_y(laser_y),
@@ -145,6 +147,8 @@ laser laser_unit (
     .player_x(player_x),
     .player_y(player_y),
     .shooting(shooting),
+    .laser_x(laser_x),
+    .laser_y(laser_y),
     .rgb_out(laser_rgb),
     .laser_on(laser_on)
 );
@@ -153,8 +157,8 @@ vgac vgac_unit (
     .d_in(rgb_out),
     .vga_clk(clk25),
     .clrn(~rstn),
-    .row_addr(x),
-    .col_addr(y),
+    .row_addr(y),
+    .col_addr(x),
     .r(r),
     .g(g),
     .b(b),
@@ -170,33 +174,26 @@ background background_unit(
     .rgb(background_rgb)
 );
 
-cover_blk_mem cover_unit (
-  .clka(clk),    // input wire clka
-  .ena(1),      // input wire ena
-  .addra(y*640+x),  // input wire [18 : 0] addra
-  .douta(cover_rgb)  // output wire [11 : 0] douta
+cover cover_unit(
+    .clk(clk),
+    .x(x),
+    .y(y),
+    .rgb(cover_rgb)
 );
 
-/* gameover_blk_mem gameover_unit(
-  .clka(clk),    // input wire clka
-  .ena(1),      // input wire ena
-  .addra(y*640+x),  // input wire [18 : 0] addra
-  .douta(gameover_rgb)  // output wire [11 : 0] douta
-); */
-
-success_blk_mem success_unit (
-  .clka(clk),    // input wire clka
-  .ena(1),      // input wire ena
-  .addra(y*640+x),  // input wire [18 : 0] addra
-  .douta(success_rgb)  // output wire [11 : 0] douta
+success success_unit(
+    .clk(clk),
+    .x(x),
+    .y(y),
+    .rgb(success_rgb)
 );
 
 always @* begin
     if (video_off) begin
         rgb_next = 12'b0;
     end
-    else if(game_state == 4'b0001) begin
-        rgb_next = cover_rgb;
+    else if(game_state == 4'b0001 || game_state == 4'b0000) begin
+        rgb_next = success_rgb;
     end
     else if(game_state == 4'b1000) begin
         rgb_next = success_rgb;
@@ -217,7 +214,7 @@ always @* begin
         rgb_next = player_rgb;
     end
     else begin
-        rgb_next = background_rgb;
+        rgb_next = success_rgb;
     end
 end
 
