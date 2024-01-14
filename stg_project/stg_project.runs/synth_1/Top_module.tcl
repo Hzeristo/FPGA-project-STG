@@ -99,8 +99,20 @@ add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/success/su
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/playerhit/playerhit.coe}}
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/cover/sky.coe}}
 read_verilog -library xil_defaultlib {
+  D:/CodesPractice/learning/DL/logisim_evolution_workspace/lab7/DisplayNumber/verilog/gates/AND_GATE.v
+  D:/CodesPractice/learning/DL/logisim_evolution_workspace/lab7/DisplayNumber/verilog/gates/AND_GATE_3_INPUTS.v
+  D:/CodesPractice/learning/DL/logisim_evolution_workspace/lab7/DisplayNumber/verilog/gates/AND_GATE_4_INPUTS.v
+  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/DisplayNumber.v
+  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/DisplaySync.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v
+  D:/CodesPractice/learning/DL/lab5-8/lab7/Mux4to1b1.v
+  D:/CodesPractice/learning/DL/lab5-8/lab7/Mux4to1b4.v
+  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/MyMC14495.v
+  D:/CodesPractice/learning/DL/logisim_evolution_workspace/lab7/DisplayNumber/verilog/gates/OR_GATE.v
+  D:/CodesPractice/learning/DL/logisim_evolution_workspace/lab7/DisplayNumber/verilog/gates/OR_GATE_3_INPUTS.v
+  D:/CodesPractice/learning/DL/logisim_evolution_workspace/lab7/DisplayNumber/verilog/gates/OR_GATE_4_INPUTS.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/background.v
+  D:/CodesPractice/learning/DL/lab5-8/lab7/clkdiv.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/clkdiv_25MHz.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/cover.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v

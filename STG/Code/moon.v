@@ -69,7 +69,7 @@ always @(posedge tick or posedge reset) begin
     else if(on_border) begin
         delta_x = (moon_x_next < player_x) ? 1 : 0;
         delta_y = (moon_y_next < player_y) ? 1 : 0;
-        if(delay_reg < 200) begin
+        if(delay_reg < 40) begin
             delay_next = delay_reg + 1;
         end
         else begin

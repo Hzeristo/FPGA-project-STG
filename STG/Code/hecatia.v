@@ -11,7 +11,7 @@ module hecatia(
 
 localparam MAX_X = 384;
 localparam MAX_Y = 448;
-localparam TIME_MAX = 4000;
+localparam TIME_MAX = 5000000;
 reg [9:0] hecatia_x_reg, hecatia_y_reg;
 reg [9:0] hecatia_x_next, hecatia_y_next;
 reg [25:0] time_reg;  
@@ -29,8 +29,8 @@ assign clk_in = (die == 1) ? 0 : clk;
 initial begin
     time_reg = 0;
     tick_next = 0;
-    life_reg = 200;
-    life_next = 200;
+    life_reg = 20;
+    life_next = 20;
     hecatia_x_next = 192;
     hecatia_y_next = 100;
 end
@@ -43,7 +43,7 @@ always @(posedge clk_in or posedge reset) begin
     else begin
         hecatia_x_reg <= hecatia_x_next;
         hecatia_y_reg <= hecatia_y_next;
-        life_reg = life_next;
+        life_reg <= life_next;
         time_reg <= time_next;
         tick_reg <= tick_next;
     end
@@ -54,14 +54,15 @@ always @(posedge tick) begin
     hecatia_x_next = hecatia_x_reg;
     tick_next = tick_reg;
     tick_next = tick_next + 1;
+    life_next = life_reg;
     if(reset) begin
         hecatia_x_next = 192;
         hecatia_y_next = 100;
     end
-    else if(tick_reg > 10000000) begin
+    else if(140 > tick_reg > 100) begin
         hecatia_x_next = hecatia_x_reg + 1;
     end
-    else if(25000000 > tick_reg > 15000000) begin
+    else if(200 > tick_reg > 150) begin
         hecatia_x_next = hecatia_x_reg - 1;
     end
     if(is_hit) begin

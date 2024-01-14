@@ -6,7 +6,9 @@ module Top_module(
     output hsync, vsync,    //horizontal & vertical scan signal
     output [11:0] rgb,      //rgb value to VGA port
     output buzzer,           //buzzer module
-    output [3:0] game_state_out
+    output [3:0] game_state_out,
+    output [3:0] AN,
+    output [7:0] SEGMENT
 );
 
 wire clk25;
@@ -118,8 +120,8 @@ judge_hit judge_hit_unit (
     .clk(clk),
     .rst(reset),
     .laser_on(laser_on),
-    .laser_x(laser_x),
-    .laser_y(laser_y),
+    .player_x(player_x),
+    .player_y(player_y),
     .hecatia_x(hecatia_x),
     .hecatia_y(hecatia_y),
     .hit(is_hit)
@@ -186,6 +188,17 @@ success success_unit(
     .y(y),
     .rgb(success_rgb)
 );
+
+ DisplayNumber disp_unit(
+        .clk(clk),
+        .rst(1'b0),
+        .hexs({4'b0, num_life, 4'b0, num_bomb}),
+        .points(4'b0),
+        .LEs(4'b0),
+        .AN(AN),
+        .SEGMENT(SEGMENT)
+    );
+
 
 always @* begin
         if(video_off) begin
