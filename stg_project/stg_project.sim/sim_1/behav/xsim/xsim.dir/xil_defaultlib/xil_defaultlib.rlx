@@ -2,7 +2,7 @@
 2020.2
 May  7 2023
 15:24:31
-D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v,1705206900,verilog,,D:/CodesPractice/learning/DL/FPGA-project-STG/STG/testbench/FSM_tb.v,,FSM,,,,,,,,
+D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v,1705209948,verilog,,D:/CodesPractice/learning/DL/FPGA-project-STG/STG/testbench/FSM_tb.v,,FSM,,,,,,,,
 D:/CodesPractice/learning/DL/FPGA-project-STG/STG/testbench/FSM_tb.v,1704679380,verilog,,,,FSM_tb,,,,,,,,
 D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/cover_blk_mem/sim/cover_blk_mem.v,1705202964,verilog,,D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/cover_test.v,,cover_blk_mem,,,,,,,,
 D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,

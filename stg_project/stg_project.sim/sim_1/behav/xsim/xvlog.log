@@ -1,5 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module FSM
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/CodesPractice/learning/DL/FPGA-project-STG/STG/testbench/FSM_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module FSM_tb
-WARNING: [VRFC 10-2502] extra semicolon in $unit (global) scope [D:/CodesPractice/learning/DL/FPGA-project-STG/STG/testbench/FSM_tb.v:62]

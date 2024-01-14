@@ -97,6 +97,7 @@ add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/gameover/g
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/cover/cover.coe}}
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/success/success.coe}}
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/playerhit/playerhit.coe}}
+add_files {{d:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/cover/sky.coe}}
 read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/background.v
@@ -114,6 +115,9 @@ read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/vgac.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/top.v
 }
+read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/cover_blk_mem/cover_blk_mem.xci
+set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/cover_blk_mem/cover_blk_mem_ooc.xdc]
+
 read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/moon_dist_mem/moon_dist_mem.xci
 set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/moon_dist_mem/moon_dist_mem_ooc.xdc]
 
@@ -128,9 +132,6 @@ set_property used_in_implementation false [get_files -all d:/CodesPractice/learn
 
 read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/background_blk_mem/background_blk_mem.xci
 set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/background_blk_mem/background_blk_mem_ooc.xdc]
-
-read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/cover_blk_mem/cover_blk_mem.xci
-set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/cover_blk_mem/cover_blk_mem_ooc.xdc]
 
 read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem.xci
 set_property used_in_implementation false [get_files -all d:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.gen/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem_ooc.xdc]
@@ -150,6 +151,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/constraint.xdc
 set_property used_in_implementation false [get_files D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/constraint.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/utils_1/imports/synth_1/Top_module.dcp

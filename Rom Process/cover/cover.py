@@ -38,4 +38,4 @@ def png_to_12bitrgb_coe(png_path, coe_path):
                     coe_file.write(",\n")
 
 # 用法示例
-png_to_12bitrgb_coe("cover.png", "cover.coe")
+png_to_12bitrgb_coe("sky.png", "sky.coe")

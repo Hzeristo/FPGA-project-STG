@@ -139,12 +139,12 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.runs/synth_1/Top_module.dcp
+  read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/cover_blk_mem/cover_blk_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/moon_dist_mem/moon_dist_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/hecatia_dist_mem/hecatia_dist_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/player_dist_mem/player_dist_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/laser_dist_mem/laser_dist_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/background_blk_mem/background_blk_mem.xci
-  read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/cover_blk_mem/cover_blk_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/playerhit_dist_mem/playerhit_dist_mem.xci
   read_ip -quiet D:/CodesPractice/learning/DL/FPGA-project-STG/stg_project/stg_project.srcs/sources_1/ip/success_blk_mem/success_blk_mem.xci
 OPTRACE "read constraints: implementation" START { }

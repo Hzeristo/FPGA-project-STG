@@ -5,7 +5,8 @@ module Top_module(
     input PS2_clk,    
     output hsync, vsync,    //horizontal & vertical scan signal
     output [11:0] rgb,      //rgb value to VGA port
-    output buzzer           //buzzer module
+    output buzzer,           //buzzer module
+    output [3:0] game_state_out
 );
 
 wire clk25;
@@ -57,7 +58,6 @@ PS2_Interface PS2_Interface_unit (
     .ps2_clk(PS2_clk),
     .last_key(last_key)
 );
-
 
 FSM FSM_unit (
     .clk(clk),
@@ -193,7 +193,7 @@ always @* begin
         rgb_next = 12'b0;
     end
     else if(game_state == 4'b0001 || game_state == 4'b0000) begin
-        rgb_next = success_rgb;
+        rgb_next = cover_rgb;
     end
     else if(game_state == 4'b1000) begin
         rgb_next = success_rgb;
@@ -214,7 +214,7 @@ always @* begin
         rgb_next = player_rgb;
     end
     else begin
-        rgb_next = success_rgb;
+        rgb_next = background_rgb;
     end
 end
 
@@ -225,5 +225,7 @@ end
 assign rgb = rgb_out;
 
 music_room music_unit(.clk(clk), .rst_n(1), .beep(beep));
+
+assign game_state_out = game_state;
 
 endmodule

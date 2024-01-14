@@ -29,7 +29,7 @@ wire bomb_posedge = bomb & ~bomb_reg;
 
 initial begin
     game_state <= Initial;
-    timeout_reg <= 2000_000;       //2000_0000
+    timeout_reg <= 2000;       //2000
     num_life <= 3;
     num_bomb <= 3;
 	game_en  <= 0;
@@ -151,5 +151,6 @@ always @* begin
 	end
 	endcase
 end
+
 
 endmodule
