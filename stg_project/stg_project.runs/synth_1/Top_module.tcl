@@ -97,7 +97,7 @@ add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/gameover/g
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/cover/cover.coe}}
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/success/success.coe}}
 add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/playerhit/playerhit.coe}}
-add_files {{d:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/cover/sky.coe}}
+add_files {{D:/CodesPractice/learning/DL/FPGA-project-STG/Rom Process/cover/sky.coe}}
 read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/FSM.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/background.v

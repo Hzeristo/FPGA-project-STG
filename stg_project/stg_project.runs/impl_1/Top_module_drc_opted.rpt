@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sun Jan 14 15:02:17 2024
+| Date         : Sun Jan 14 17:53:27 2024
 | Host         : SRZbook running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_module_drc_opted.rpt -pb Top_module_drc_opted.pb -rpx Top_module_drc_opted.rpx
 | Design       : Top_module
@@ -24,15 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 31
-+----------+----------+-----------------------------------------------------+------------+
-| Rule     | Severity | Description                                         | Violations |
-+----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| DPIP-1   | Warning  | Input pipelining                                    | 13         |
-| DPOP-1   | Warning  | PREG Output pipelining                              | 9          |
-| DPOP-2   | Warning  | MREG Output pipelining                              | 8          |
-+----------+----------+-----------------------------------------------------+------------+
+             Violations found: 33
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| DPIP-1      | Warning  | Input pipelining                                            | 12         |
+| DPOP-1      | Warning  | PREG Output pipelining                                      | 8          |
+| DPOP-2      | Warning  | MREG Output pipelining                                      | 8          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 4          |
++-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -51,65 +52,60 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP hecatia_unit/addr_reg1 input hecatia_unit/addr_reg1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3 input judge_collision_unit/collision3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3 input judge_collision_unit/collision3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3 input judge_collision_unit/collision3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3 input judge_collision_unit/collision3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__0 input judge_collision_unit/collision3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__0 input judge_collision_unit/collision3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__0 input judge_collision_unit/collision3__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__0 input judge_collision_unit/collision3__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__1 input judge_collision_unit/collision3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__1 input judge_collision_unit/collision3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__1 input judge_collision_unit/collision3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__1 input judge_collision_unit/collision3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__2 input judge_collision_unit/collision3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#8 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__2 input judge_collision_unit/collision3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__2 input judge_collision_unit/collision3__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#9 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__2 input judge_collision_unit/collision3__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__3 input judge_collision_unit/collision3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#10 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__3 input judge_collision_unit/collision3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP judge_collision_unit/collision3__3 input judge_collision_unit/collision3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#11 Warning
 Input pipelining  
-DSP judge_collision_unit/collision3__3 input judge_collision_unit/collision3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#12 Warning
-Input pipelining  
 DSP judge_collision_unit/collision3__4 input judge_collision_unit/collision3__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
-DPIP-1#13 Warning
+DPIP-1#12 Warning
 Input pipelining  
 DSP judge_collision_unit/collision3__4 input judge_collision_unit/collision3__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
@@ -126,35 +122,30 @@ Related violations: <none>
 
 DPOP-1#3 Warning
 PREG Output pipelining  
-DSP hecatia_unit/addr_reg0 output hecatia_unit/addr_reg0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP judge_collision_unit/collision3 output judge_collision_unit/collision3/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#4 Warning
 PREG Output pipelining  
-DSP judge_collision_unit/collision3 output judge_collision_unit/collision3/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP judge_collision_unit/collision3__0 output judge_collision_unit/collision3__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#5 Warning
 PREG Output pipelining  
-DSP judge_collision_unit/collision3__0 output judge_collision_unit/collision3__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP judge_collision_unit/collision3__1 output judge_collision_unit/collision3__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#6 Warning
 PREG Output pipelining  
-DSP judge_collision_unit/collision3__1 output judge_collision_unit/collision3__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP judge_collision_unit/collision3__2 output judge_collision_unit/collision3__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#7 Warning
 PREG Output pipelining  
-DSP judge_collision_unit/collision3__2 output judge_collision_unit/collision3__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#8 Warning
-PREG Output pipelining  
 DSP judge_collision_unit/collision3__3 output judge_collision_unit/collision3__3/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
-DPOP-1#9 Warning
+DPOP-1#8 Warning
 PREG Output pipelining  
 DSP judge_collision_unit/collision3__4 output judge_collision_unit/collision3__4/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
@@ -197,6 +188,56 @@ Related violations: <none>
 DPOP-2#8 Warning
 MREG Output pipelining  
 DSP judge_collision_unit/collision3__4 multiplier stage judge_collision_unit/collision3__4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT hecatia_unit/life_next[9]_i_2 is driving clock pin of 12 cells. This could lead to large hold time violations. Involved cells are:
+hecatia_unit/hecatia_x_next_reg[6], hecatia_unit/hecatia_x_next_reg[7],
+hecatia_unit/life_next_reg[0], hecatia_unit/life_next_reg[1],
+hecatia_unit/life_next_reg[2], hecatia_unit/life_next_reg[3],
+hecatia_unit/life_next_reg[4], hecatia_unit/life_next_reg[5],
+hecatia_unit/life_next_reg[6], hecatia_unit/life_next_reg[7],
+hecatia_unit/life_next_reg[8], hecatia_unit/life_next_reg[9]
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT hecatia_unit/time_reg[11]_i_2 is driving clock pin of 24 cells. This could lead to large hold time violations. Involved cells are:
+hecatia_unit/hecatia_x_reg_reg[6], hecatia_unit/hecatia_x_reg_reg[7],
+hecatia_unit/life_reg_reg[0], hecatia_unit/life_reg_reg[1],
+hecatia_unit/life_reg_reg[2], hecatia_unit/life_reg_reg[3],
+hecatia_unit/life_reg_reg[4], hecatia_unit/life_reg_reg[5],
+hecatia_unit/life_reg_reg[6], hecatia_unit/life_reg_reg[7],
+hecatia_unit/life_reg_reg[8], hecatia_unit/life_reg_reg[9],
+hecatia_unit/time_reg_reg[0], hecatia_unit/time_reg_reg[10],
+hecatia_unit/time_reg_reg[11] (the first 15 of 24 listed)
+Related violations: <none>
+
+PLHOLDVIO-2#3 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT laser_unit/laser_x_next[8]_i_1 is driving clock pin of 19 cells. This could lead to large hold time violations. Involved cells are:
+laser_unit/laser_x_next_reg[0], laser_unit/laser_x_next_reg[1],
+laser_unit/laser_x_next_reg[2], laser_unit/laser_x_next_reg[3],
+laser_unit/laser_x_next_reg[4], laser_unit/laser_x_next_reg[5],
+laser_unit/laser_x_next_reg[6], laser_unit/laser_x_next_reg[7],
+laser_unit/laser_x_next_reg[8], laser_unit/laser_y_next_reg[0],
+laser_unit/laser_y_next_reg[1], laser_unit/laser_y_next_reg[2],
+laser_unit/laser_y_next_reg[3], laser_unit/laser_y_next_reg[4],
+laser_unit/laser_y_next_reg[5] (the first 15 of 19 listed)
+Related violations: <none>
+
+PLHOLDVIO-2#4 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT player_unit/player_x_next[8]_i_2 is driving clock pin of 19 cells. This could lead to large hold time violations. Involved cells are:
+player_unit/player_x_next_reg[0], player_unit/player_x_next_reg[1],
+player_unit/player_x_next_reg[2], player_unit/player_x_next_reg[3],
+player_unit/player_x_next_reg[4], player_unit/player_x_next_reg[5],
+player_unit/player_x_next_reg[6], player_unit/player_x_next_reg[7],
+player_unit/player_x_next_reg[8], player_unit/player_y_next_reg[0],
+player_unit/player_y_next_reg[1], player_unit/player_y_next_reg[2],
+player_unit/player_y_next_reg[3], player_unit/player_y_next_reg[4],
+player_unit/player_y_next_reg[5] (the first 15 of 19 listed)
 Related violations: <none>
 
 

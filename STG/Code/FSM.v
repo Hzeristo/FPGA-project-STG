@@ -86,7 +86,7 @@ always @* begin
         if(bomb_posedge && num_bomb > 0) begin
             num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;
-            timeout_next = 4000_0000;
+            timeout_next = 4000_0000_0;
         end	
         if(die) begin
             game_state_next = Success;
@@ -100,7 +100,7 @@ always @* begin
 			else begin
 				num_life_next = num_life - 1; 	
 				game_state_next = Collision;
-				timeout_next = 2000_0000; 	
+				timeout_next = 2000_0000_0; 	
 			end
 		end
 	end
@@ -108,7 +108,7 @@ always @* begin
         if(bomb && num_bomb > 0) begin
             num_bomb_next = num_bomb - 1;
             game_state_next = Bomb;
-            timeout_next = 2000_0000;
+            timeout_next = 2000_0000_0;
         end
         if(die) begin
             game_state_next = Success;

@@ -32,8 +32,6 @@ end
 always @(posedge clk or posedge reset) begin
     if (reset) begin
         time_reg <= 0;
-        laser_x_next <= 192;
-        laser_y_next <= 399;
         laser_x_reg <= laser_x_next;
         laser_y_reg <= laser_y_next;
     end
@@ -52,7 +50,7 @@ always @(posedge tick or posedge reset) begin
         laser_y_next = 399;
     end
     else begin
-        laser_x_next = player_x - 7;
+        laser_x_next = player_x;
         laser_y_next = player_y - 1;
     end
 end
@@ -71,7 +69,7 @@ laser_dist_mem laser_unit(
   .spo(rgb_out)  // output wire [11 : 0] spo
 );
 
-wire cover_on = (x >= laser_x_reg - 15 && x < laser_x_reg + 16 && y >= laser_y_reg - 23 && y < laser_y_reg + 24) ? 1 : 0;
+wire cover_on = (x >= laser_x_reg - 15 && x < laser_x_reg + 16) ? 1 : 0;
 assign laser_on = cover_on && shooting && (rgb_out != 12'b0000_0000_0000) ? 1 : 0;
 assign laser_x = laser_x_reg;
 assign laser_y = laser_y_reg;

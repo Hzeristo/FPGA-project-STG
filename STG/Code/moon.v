@@ -9,7 +9,7 @@ module moon(
 
 localparam MAX_X = 384;
 localparam MAX_Y = 448;
-localparam TIME_MAX = 2000000;         //确定tick长度
+localparam TIME_MAX = 500000;         //确定tick长度
 
 reg [9:0] moon_x_reg, moon_y_reg;
 reg [9:0] moon_x_next, moon_y_next;
@@ -22,6 +22,8 @@ reg on_border;
 reg [13:0] addr_reg;
 wire [13:0] addr;
 assign addr = addr_reg;
+reg delta_x, delta_y;
+
 
 initial begin
     on_border = 0;
@@ -29,10 +31,12 @@ initial begin
     moon_x_next = 192;
     moon_y_next = 100;
     time_reg = 0;
+    delta_x = 1;
+    delta_y = 1;
 end
 
 always @* begin
-    if(moon_x_reg == 0||moon_x_reg == 384||moon_y_reg == 0||moon_y_reg == 448)begin
+    if(moon_x_reg == 64||moon_x_reg == 320||moon_y_reg == 64||moon_y_reg == 384)begin
         on_border = 1;
     end
     else begin
@@ -50,7 +54,6 @@ always @(posedge clk) begin
         delay_reg <= delay_next;
         time_reg <= time_next;
     end
-
 end
 
 always @(posedge tick or posedge reset) begin
@@ -60,19 +63,23 @@ always @(posedge tick or posedge reset) begin
         moon_x_next = 192;
         moon_y_next = 100;
         delay_next = 0;
+        delta_x = (moon_x_next < player_x) ? 1 : 0;
+        delta_y = (moon_y_next < player_y) ? 1 : 0;
     end
     else if(on_border) begin
-        if(delay_reg < 4000_0000) begin
+        delta_x = (moon_x_next < player_x) ? 1 : 0;
+        delta_y = (moon_y_next < player_y) ? 1 : 0;
+        if(delay_reg < 200) begin
             delay_next = delay_reg + 1;
         end
         else begin
-            if(player_x > moon_x_reg) begin 
+            if(delta_x > 0) begin 
                 moon_x_next = moon_x_reg + 1;
             end
             else begin
                 moon_x_next = moon_x_reg - 1;
             end
-            if(player_y > moon_y_reg) begin 
+            if(delta_y > 0) begin 
                 moon_y_next = moon_y_reg + 1;
             end
             else begin
@@ -82,13 +89,13 @@ always @(posedge tick or posedge reset) begin
     end
     else begin
         delay_next <= 0;
-        if(player_x > moon_x_reg) begin 
+        if(delta_x > 0) begin 
             moon_x_next = moon_x_reg + 1;
         end
         else begin
             moon_x_next = moon_x_reg - 1;
         end
-        if(player_y > moon_y_reg) begin 
+        if(delta_y > 0) begin 
             moon_y_next = moon_y_reg + 1;
         end
         else begin

@@ -19,6 +19,7 @@ wire game_en, game_reset;
 wire reset = hard_reset || game_reset;
 wire [3:0] num_life, num_bomb;
 wire collision, die;
+wire gamestate_collision = (game_state == 4'b1010) ? 1 : 0;
 wire [9:0] x, y;
 wire [9:0] player_x, player_y;
 wire [9:0] hecatia_x, hecatia_y;
@@ -32,14 +33,6 @@ wire video_off;
 wire [11:0] background_rgb, cover_rgb, success_rgb, /*gameover_rgb*/ hecatia_rgb, moon_rgb, player_rgb, laser_rgb;
 wire [3:0] r,g,b;
 wire [7:0] last_key;
-
-assign ctrl_up = (last_key == 8'h1d) ? 1 : 0;
-assign ctrl_down = (last_key == 8'h1b) ? 1 : 0;
-assign ctrl_left = (last_key == 8'h1c) ? 1 : 0;
-assign ctrl_right = (last_key == 8'h23) ? 1 : 0;
-assign enter = (last_key == 8'h5a) ? 1 : 0;
-assign bomb = (last_key == 8'h22) ? 1 : 0;
-assign shooting = (last_key == 8'h1a) ? 1 : 0;
 
 initial begin
     rgb_out = 0;
@@ -56,7 +49,13 @@ PS2_Interface PS2_Interface_unit (
     .rst(reset),
     .ps2_data(PS2_data),
     .ps2_clk(PS2_clk),
-    .last_key(last_key)
+    .w(ctrl_up),
+    .a(ctrl_left),
+    .s(ctrl_down),
+    .d(ctrl_right),
+    .z(shooting),
+    .x(bomb),
+    .enter(enter)
 );
 
 FSM FSM_unit (
@@ -82,7 +81,7 @@ player player_unit (
     .ctrl_down(ctrl_down),
     .ctrl_left(ctrl_left),
     .ctrl_right(ctrl_right),
-    .collision(collision),
+    .collision(gamestate_collision),
     .player_x(player_x),
     .player_y(player_y),
     .rgb_out(player_rgb),
@@ -156,7 +155,7 @@ laser laser_unit (
 vgac vgac_unit (
     .d_in(rgb_out),
     .vga_clk(clk25),
-    .clrn(~rstn),
+    .clrn(rstn),
     .row_addr(y),
     .col_addr(x),
     .r(r),
@@ -189,33 +188,33 @@ success success_unit(
 );
 
 always @* begin
-    if (video_off) begin
-        rgb_next = 12'b0;
-    end
-    else if(game_state == 4'b0001 || game_state == 4'b0000) begin
-        rgb_next = cover_rgb;
-    end
-    else if(game_state == 4'b1000) begin
-        rgb_next = success_rgb;
-    end
-    else if(game_state == 4'b1001) begin
-        rgb_next = success_rgb;
-    end
-    else if(game_en && moon_on) begin
-        rgb_next = moon_rgb;
-    end
-    else if(game_en && hecatia_on) begin
-        rgb_next = hecatia_rgb;
-    end
-    else if(game_en && player_on) begin
-        rgb_next = player_rgb;
-    end
-    else if(game_en && laser_on) begin
-        rgb_next = player_rgb;
-    end
-    else begin
-        rgb_next = background_rgb;
-    end
+        if(video_off) begin
+            rgb_next = 0;
+        end
+        else if(game_state == 4'b0001 || game_state == 4'b0000) begin
+            rgb_next = cover_rgb;
+        end
+        else if(game_state == 4'b1000) begin
+            rgb_next = success_rgb;
+        end
+        else if(game_state == 4'b1001) begin
+            rgb_next = success_rgb;
+        end
+        else if(game_en && moon_on) begin
+            rgb_next = moon_rgb;
+        end
+        else if(game_en && hecatia_on) begin
+            rgb_next = hecatia_rgb;
+        end
+        else if(game_en && player_on) begin
+            rgb_next = player_rgb;
+        end
+        else if(game_en && laser_on) begin
+            rgb_next = player_rgb;
+        end
+        else begin
+            rgb_next = background_rgb;
+        end
 end
 
 always @(posedge clk) begin
