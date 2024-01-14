@@ -10,10 +10,10 @@ always @(posedge clk or posedge rst) begin
     hit = 0;
     if(rst)
 	   hit = 0;
-	else begin
-        if((player_x >= hecatia_x - 30 && player_x < hecatia_x + 31 && player_y < hecatia_y - 40 && laser_on))
+    else begin
+        if((player_x >= hecatia_x - 30 && player_x < hecatia_x + 31 && player_y > hecatia_y && laser_on == 1))
             hit = 1;
-	end
+    end
 end
 
 endmodule

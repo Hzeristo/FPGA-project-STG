@@ -28,13 +28,13 @@ wire [9:0] hecatia_x, hecatia_y;
 wire [9:0] moon_x, moon_y;
 wire [9:0] laser_x, laser_y;
 wire hecatia_on, is_hit;
-wire [7:0] health;
 wire moon_on, player_on;
 reg [11:0] rgb_out, rgb_next;
 wire video_off;
 wire [11:0] background_rgb, cover_rgb, success_rgb, /*gameover_rgb*/ hecatia_rgb, moon_rgb, player_rgb, laser_rgb;
 wire [3:0] r,g,b;
 wire [7:0] last_key;
+wire [3:0] health;
 
 initial begin
     rgb_out = 0;
@@ -99,9 +99,7 @@ hecatia hecatia_unit (
     .hecatia_on(hecatia_on),
     .hecatia_x(hecatia_x),
     .hecatia_y(hecatia_y),
-    .rgb_out(hecatia_rgb),
-    .health(health),
-    .die(die)
+    .rgb_out(hecatia_rgb)
 );
 
 judge_collision judge_collision_unit (
@@ -168,6 +166,14 @@ vgac vgac_unit (
     .vs(vsync)
 );
 
+health health_unit(
+    .clk(clk),
+    .rst(reset),
+    .is_hit(is_hit),
+    .die(die),
+    .health(health)
+);
+
 background background_unit(
     .clk(clk),
     .x(x),
@@ -192,7 +198,7 @@ success success_unit(
  DisplayNumber disp_unit(
         .clk(clk),
         .rst(1'b0),
-        .hexs({4'b0, num_life, 4'b0, num_bomb}),
+        .hexs({7'b0, is_hit, 4'b0, health}),
         .points(4'b0),
         .LEs(4'b0),
         .AN(AN),

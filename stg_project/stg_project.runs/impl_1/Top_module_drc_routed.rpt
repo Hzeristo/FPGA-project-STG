@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sun Jan 14 18:57:39 2024
+| Date         : Sun Jan 14 20:08:35 2024
 | Host         : SRZbook running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_module_drc_routed.rpt -pb Top_module_drc_routed.pb -rpx Top_module_drc_routed.rpx
 | Design       : Top_module
@@ -198,7 +198,7 @@ Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net hecatia_unit/tick is a gated clock net sourced by a combinational pin hecatia_unit/life_next[9]_i_2/O, cell hecatia_unit/life_next[9]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net hecatia_unit/tick is a gated clock net sourced by a combinational pin hecatia_unit/hecatia_x_next[7]_i_2/O, cell hecatia_unit/hecatia_x_next[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
@@ -318,13 +318,8 @@ Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT hecatia_unit/life_next[9]_i_2 is driving clock pin of 12 cells. This could lead to large hold time violations. Involved cells are:
-hecatia_unit/hecatia_x_next_reg[6], hecatia_unit/hecatia_x_next_reg[7],
-hecatia_unit/life_next_reg[0], hecatia_unit/life_next_reg[1],
-hecatia_unit/life_next_reg[2], hecatia_unit/life_next_reg[3],
-hecatia_unit/life_next_reg[4], hecatia_unit/life_next_reg[5],
-hecatia_unit/life_next_reg[6], hecatia_unit/life_next_reg[7],
-hecatia_unit/life_next_reg[8], hecatia_unit/life_next_reg[9]
+A LUT hecatia_unit/hecatia_x_next[7]_i_2 is driving clock pin of 2 cells. This could lead to large hold time violations. Involved cells are:
+hecatia_unit/hecatia_x_next_reg[6], hecatia_unit/hecatia_x_next_reg[7]
 Related violations: <none>
 
 PLHOLDVIO-2#2 Warning

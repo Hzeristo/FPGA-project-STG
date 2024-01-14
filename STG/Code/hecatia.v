@@ -2,11 +2,10 @@ module hecatia(
     input clk, reset,
     input [9:0] x, y, 
     input is_hit,
+    input die,
     output hecatia_on,
     output [9:0] hecatia_x, hecatia_y,
-    output [11:0] rgb_out,
-    output [7:0] health,
-    output die
+    output [11:0] rgb_out
 );
 
 localparam MAX_X = 384;
@@ -22,15 +21,12 @@ reg [9:0] tick_reg, tick_next;
 reg [12:0] addr_reg;
 wire [12:0] addr;
 assign addr = addr_reg;
-reg [9:0] life_next, life_reg;
 wire clk_in;
 assign clk_in = (die == 1) ? 0 : clk;
 
 initial begin
     time_reg = 0;
     tick_next = 0;
-    life_reg = 20;
-    life_next = 20;
     hecatia_x_next = 192;
     hecatia_y_next = 100;
 end
@@ -43,7 +39,6 @@ always @(posedge clk_in or posedge reset) begin
     else begin
         hecatia_x_reg <= hecatia_x_next;
         hecatia_y_reg <= hecatia_y_next;
-        life_reg <= life_next;
         time_reg <= time_next;
         tick_reg <= tick_next;
     end
@@ -54,7 +49,6 @@ always @(posedge tick) begin
     hecatia_x_next = hecatia_x_reg;
     tick_next = tick_reg;
     tick_next = tick_next + 1;
-    life_next = life_reg;
     if(reset) begin
         hecatia_x_next = 192;
         hecatia_y_next = 100;
@@ -65,9 +59,7 @@ always @(posedge tick) begin
     else if(200 > tick_reg > 150) begin
         hecatia_x_next = hecatia_x_reg - 1;
     end
-    if(is_hit) begin
-        life_next = life_reg - 1;
-    end
+
 end
 
 always @* begin
@@ -82,10 +74,9 @@ hecatia_dist_mem hecatia_unit (
 );
 
 wire cover_on = (x >= hecatia_x_reg - 31 && x <= hecatia_x_reg + 32 && y >= hecatia_y_reg - 47 && y <= hecatia_y_reg + 48) ? 1 : 0;
-assign hecatia_on = cover_on && (rgb_out != 12'b1100_1100_1100) && (life_reg != 0) ? 1 : 0;
+assign hecatia_on = cover_on && (rgb_out != 12'b1100_1100_1100) && (die == 0) ? 1 : 0;
 assign hecatia_x = hecatia_x_reg;
 assign hecatia_y = hecatia_y_reg;
-assign health = life_reg;
-assign die = (life_reg == 0) ? 1 : 0;
+
 
 endmodule

@@ -115,6 +115,7 @@ read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/lab5-8/lab7/clkdiv.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/clkdiv_25MHz.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/cover.v
+  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/health.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_collision.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_hit.v
