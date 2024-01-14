@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sun Jan 14 20:08:38 2024
+| Date         : Sun Jan 14 20:41:57 2024
 | Host         : SRZbook running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Top_module_methodology_drc_routed.rpt -pb Top_module_methodology_drc_routed.pb -rpx Top_module_methodology_drc_routed.rpx
 | Design       : Top_module
@@ -721,7 +721,7 @@ player_unit/player_y_next_reg[1]/CLR, player_unit/player_y_next_reg[2]/CLR,
 player_unit/player_y_next_reg[3]/CLR, player_unit/player_y_next_reg[4]/PRE,
 player_unit/player_y_next_reg[5]/CLR, player_unit/player_y_next_reg[6]/CLR,
 player_unit/player_y_next_reg[7]/PRE, player_unit/player_y_next_reg[8]/PRE,
-player_unit/player_y_next_reg[9]/CLR (the first 15 of 137 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+player_unit/player_y_next_reg[9]/CLR (the first 15 of 136 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#23 Warning

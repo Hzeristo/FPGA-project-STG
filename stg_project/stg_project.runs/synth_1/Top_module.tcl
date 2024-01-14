@@ -118,7 +118,6 @@ read_verilog -library xil_defaultlib {
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/health.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/hecatia.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_collision.v
-  D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/judge_hit.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Framework/keyboard.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/laser.v
   D:/CodesPractice/learning/DL/FPGA-project-STG/STG/Code/moon.v

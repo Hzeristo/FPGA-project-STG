@@ -24,8 +24,6 @@ end
 
 always @(posedge clk) begin
     if(rst) begin
-        life_reg <= 10;
-        life_next <= 10;
         flag <= 0; 
         die_reg <= 0;
     end
@@ -39,9 +37,11 @@ always @(posedge clk) begin
 end
 
 always @(posedge tick) begin
-    life_next <= life_reg;
     if(is_hit) begin
         life_next <= life_reg - 1;
+    end
+    else begin
+        life_next <= life_reg;
     end
 end
 

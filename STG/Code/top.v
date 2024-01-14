@@ -27,7 +27,9 @@ wire [9:0] player_x, player_y;
 wire [9:0] hecatia_x, hecatia_y;
 wire [9:0] moon_x, moon_y;
 wire [9:0] laser_x, laser_y;
-wire hecatia_on, is_hit;
+wire hecatia_on;
+wire shooting;
+wire is_hit = ((player_x >= hecatia_x - 30 && player_x < hecatia_x + 31 && player_y > hecatia_y && shooting))? 1 : 0; 
 wire moon_on, player_on;
 reg [11:0] rgb_out, rgb_next;
 wire video_off;
@@ -114,17 +116,6 @@ judge_collision judge_collision_unit (
     .collision(collision)
 );
 
-judge_hit judge_hit_unit (
-    .clk(clk),
-    .rst(reset),
-    .laser_on(laser_on),
-    .player_x(player_x),
-    .player_y(player_y),
-    .hecatia_x(hecatia_x),
-    .hecatia_y(hecatia_y),
-    .hit(is_hit)
-);
-
 moon moon_unit (
     .clk(clk),
     .reset(reset),
@@ -198,7 +189,7 @@ success success_unit(
  DisplayNumber disp_unit(
         .clk(clk),
         .rst(1'b0),
-        .hexs({7'b0, is_hit, 4'b0, health}),
+        .hexs({4'b0, num_life, 4'b0, health}),
         .points(4'b0),
         .LEs(4'b0),
         .AN(AN),
@@ -229,7 +220,7 @@ always @* begin
             rgb_next = player_rgb;
         end
         else if(game_en && laser_on) begin
-            rgb_next = player_rgb;
+            rgb_next = laser_rgb;
         end
         else begin
             rgb_next = background_rgb;
