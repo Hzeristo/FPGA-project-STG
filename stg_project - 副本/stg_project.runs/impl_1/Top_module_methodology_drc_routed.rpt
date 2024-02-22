@@ -1,0 +1,1232 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Jan 14 22:29:10 2024
+| Host         : SRZbook running 64-bit major release  (build 9200)
+| Command      : report_methodology -file Top_module_methodology_drc_routed.rpt -pb Top_module_methodology_drc_routed.pb -rpx Top_module_methodology_drc_routed.rpx
+| Design       : Top_module
+| Device       : xc7k160tffg676-2L
+| Speed File   : -2L
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 237
++-----------+------------------+--------------------------------+------------+
+| Rule      | Severity         | Description                    | Violations |
++-----------+------------------+--------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell    | 121        |
+| LUTAR-1   | Warning          | LUT drives async reset alert   | 43         |
+| SYNTH-10  | Warning          | Wide multiplier                | 6          |
+| TIMING-18 | Warning          | Missing input or output delay  | 32         |
+| TIMING-20 | Warning          | Non-clocked latch              | 34         |
+| LATCH-1   | Advisory         | Existing latches in the design | 1          |
++-----------+------------------+--------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin background_unit/addr0/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin cover_unit/addr/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Critical Warning
+Non-clocked sequential cell  
+The clock pin health_unit/life_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Critical Warning
+Non-clocked sequential cell  
+The clock pin health_unit/life_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Critical Warning
+Non-clocked sequential cell  
+The clock pin health_unit/life_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin health_unit/life_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin health_unit/life_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin health_unit/life_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Critical Warning
+Non-clocked sequential cell  
+The clock pin health_unit/life_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Critical Warning
+Non-clocked sequential cell  
+The clock pin hecatia_unit/hecatia_x_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Critical Warning
+Non-clocked sequential cell  
+The clock pin hecatia_unit/hecatia_x_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_x_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#23 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#24 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#28 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#29 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#30 Critical Warning
+Non-clocked sequential cell  
+The clock pin laser_unit/laser_y_next_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#31 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delay_next_reg[0]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#32 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delay_next_reg[1]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#33 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delay_next_reg[2]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#34 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delay_next_reg[3]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#35 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delay_next_reg[4]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#36 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delay_next_reg[5]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#37 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delta_x_reg_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#38 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delta_x_reg_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#39 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delta_y_reg_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#40 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/delta_y_reg_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#41 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#42 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#43 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#44 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#46 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#47 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#48 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#49 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#50 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_x_next_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#51 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#52 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#53 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#54 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#55 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#56 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#57 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#58 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#59 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#60 Critical Warning
+Non-clocked sequential cell  
+The clock pin moon_unit/moon_y_next_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#61 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#62 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#63 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#64 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#65 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#66 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#67 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#68 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#69 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_x_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#70 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#71 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#72 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#73 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#74 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#75 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#76 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#77 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#78 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#79 Critical Warning
+Non-clocked sequential cell  
+The clock pin player_unit/player_y_next_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#80 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#81 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#82 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#83 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#84 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#85 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#86 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#87 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#88 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#89 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/col_addr_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#90 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#91 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#92 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#93 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#94 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#95 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#96 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#97 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#98 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#99 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/h_count_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#100 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/hs_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#101 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/rdn_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#102 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#103 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#104 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#105 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#106 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#107 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#108 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#109 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#110 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/row_addr_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#111 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#112 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#113 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#114 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#115 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#116 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#117 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#118 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#119 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#120 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/v_count_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#121 Critical Warning
+Non-clocked sequential cell  
+The clock pin vgac_unit/vs_reg/C is not reached by a timing clock
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/delta_y_reg_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) moon_unit/delta_y_reg_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/delta_y_reg_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) moon_unit/delta_y_reg_C/CLR, moon_unit/delta_y_reg_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[0]_C/CLR, laser_unit/laser_x_reg_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[1]_C/CLR, laser_unit/laser_x_reg_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[2]_C/CLR, laser_unit/laser_x_reg_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#6 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[3]_C/CLR, laser_unit/laser_x_reg_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#7 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[4]_C/CLR, laser_unit/laser_x_reg_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#8 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[5]_C/CLR, laser_unit/laser_x_reg_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#9 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[6]_C/CLR, laser_unit/laser_x_reg_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#10 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[7]_C/CLR, laser_unit/laser_x_reg_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#11 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_x_reg_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[8]_C/CLR, laser_unit/laser_x_reg_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#12 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[0]_C/CLR, laser_unit/laser_y_reg_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#13 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[1]_C/CLR, laser_unit/laser_y_reg_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#14 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[2]_C/CLR, laser_unit/laser_y_reg_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#15 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[3]_C/CLR, laser_unit/laser_y_reg_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#16 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[4]_C/CLR, laser_unit/laser_y_reg_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#17 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[5]_C/CLR, laser_unit/laser_y_reg_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#18 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[6]_C/CLR, laser_unit/laser_y_reg_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#19 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[7]_C/CLR, laser_unit/laser_y_reg_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#20 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[8]_C/CLR, laser_unit/laser_y_reg_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#21 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/laser_y_reg_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[9]_C/CLR, laser_unit/laser_y_reg_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#22 Warning
+LUT drives async reset alert  
+LUT cell FSM_unit/ps2_clk_falg0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) player_unit/player_x_next_reg[4]/CLR, player_unit/player_x_next_reg[5]/CLR,
+player_unit/player_x_next_reg[6]/PRE, player_unit/player_x_next_reg[7]/PRE,
+player_unit/player_x_next_reg[8]/CLR, player_unit/player_y_next_reg[0]/CLR,
+player_unit/player_y_next_reg[1]/CLR, player_unit/player_y_next_reg[2]/CLR,
+player_unit/player_y_next_reg[3]/CLR, player_unit/player_y_next_reg[4]/PRE,
+player_unit/player_y_next_reg[5]/CLR, player_unit/player_y_next_reg[6]/CLR,
+player_unit/player_y_next_reg[7]/PRE, player_unit/player_y_next_reg[8]/PRE,
+player_unit/player_y_next_reg[9]/CLR (the first 15 of 150 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#23 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#24 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#25 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#26 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#27 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#28 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#29 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#30 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#31 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_x_reg_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_x_reg_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#32 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#33 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#34 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#35 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#36 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#37 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#38 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#39 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#40 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#41 Warning
+LUT drives async reset alert  
+LUT cell laser_unit/laser_y_reg_reg[9]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) laser_unit/laser_y_reg_reg[9]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#42 Warning
+LUT drives async reset alert  
+LUT cell player_unit/delta_x_reg_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) moon_unit/delta_x_reg_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#43 Warning
+LUT drives async reset alert  
+LUT cell player_unit/delta_x_reg_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) moon_unit/delta_x_reg_C/CLR, moon_unit/delta_x_reg_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+SYNTH-10#1 Warning
+Wide multiplier  
+Detected multiplier at judge_collision_unit/collision3 of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#2 Warning
+Wide multiplier  
+Detected multiplier at judge_collision_unit/collision3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#3 Warning
+Wide multiplier  
+Detected multiplier at judge_collision_unit/collision3__1 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#4 Warning
+Wide multiplier  
+Detected multiplier at judge_collision_unit/collision3__2 of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#5 Warning
+Wide multiplier  
+Detected multiplier at judge_collision_unit/collision3__3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#6 Warning
+Wide multiplier  
+Detected multiplier at judge_collision_unit/collision3__4 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on PS2_clk relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on PS2_data relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on rstn relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on AN[0] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on AN[1] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on AN[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on AN[3] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[0] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[1] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[3] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[4] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[5] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[6] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on SEGMENT[7] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on buzzer relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An output delay is missing on game_state_out[0] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An output delay is missing on game_state_out[1] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An output delay is missing on game_state_out[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An output delay is missing on game_state_out[3] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An output delay is missing on rgb[0] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An output delay is missing on rgb[10] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#23 Warning
+Missing input or output delay  
+An output delay is missing on rgb[11] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#24 Warning
+Missing input or output delay  
+An output delay is missing on rgb[1] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#25 Warning
+Missing input or output delay  
+An output delay is missing on rgb[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#26 Warning
+Missing input or output delay  
+An output delay is missing on rgb[3] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#27 Warning
+Missing input or output delay  
+An output delay is missing on rgb[4] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#28 Warning
+Missing input or output delay  
+An output delay is missing on rgb[5] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#29 Warning
+Missing input or output delay  
+An output delay is missing on rgb[6] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#30 Warning
+Missing input or output delay  
+An output delay is missing on rgb[7] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#31 Warning
+Missing input or output delay  
+An output delay is missing on rgb[8] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#32 Warning
+Missing input or output delay  
+An output delay is missing on rgb[9] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[0] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[10] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[11] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[12] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[1] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[2] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[3] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[4] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[5] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[6] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[7] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[8] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch hecatia_unit/addr_reg_reg[9] cannot be properly analyzed as its control pin hecatia_unit/addr_reg_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[0]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[0]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[1]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[1]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[2]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[2]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[3]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[3]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[4]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[4]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[5]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[5]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[6]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[6]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[7]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[7]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch laser_unit/laser_x_reg_reg[8]_LDC cannot be properly analyzed as its control pin laser_unit/laser_x_reg_reg[8]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[0]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[0]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[1]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[1]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[2]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[2]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[3]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[3]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[4]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[4]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[5]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[5]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[6]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[6]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[7]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[7]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[8]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[8]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch laser_unit/laser_y_reg_reg[9]_LDC cannot be properly analyzed as its control pin laser_unit/laser_y_reg_reg[9]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch moon_unit/delta_x_reg_LDC cannot be properly analyzed as its control pin moon_unit/delta_x_reg_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch moon_unit/delta_y_reg_LDC cannot be properly analyzed as its control pin moon_unit/delta_y_reg_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 34 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+Related violations: <none>
+
+

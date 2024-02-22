@@ -1,0 +1,174 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Jan 14 22:28:12 2024
+| Host         : SRZbook running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_module_control_sets_placed.rpt
+| Design       : Top_module
+| Device       : xc7k160t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    96 |
+|    Minimum number of control sets                        |    96 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   594 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    96 |
+| >= 0 to < 4        |    72 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     4 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    12 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             157 |           89 |
+| No           | No                    | Yes                    |             168 |           93 |
+| No           | Yes                   | No                     |              62 |           37 |
+| Yes          | No                    | No                     |              75 |           29 |
+| Yes          | No                    | Yes                    |              80 |           37 |
+| Yes          | Yes                   | No                     |              40 |           11 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------------------+-----------------------------------------+---------------------------------------------+------------------+----------------+--------------+
+|                 Clock Signal                 |              Enable Signal              |               Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------------------------+-----------------------------------------+---------------------------------------------+------------------+----------------+--------------+
+|  moon_unit/tick_BUFG                         |                                         | player_unit/player_x_reg_reg[8]_1           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[6]                |                1 |              1 |         1.00 |
+|  moon_unit/tick_BUFG                         |                                         | FSM_unit/FSM_sequential_game_state_reg[2]_3 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[4]                |                1 |              1 |         1.00 |
+|  moon_unit/tick_BUFG                         | moon_unit/on_border                     | player_unit/player_x_reg_reg[8]_0           |                1 |              1 |         1.00 |
+|  moon_unit/tick_BUFG                         | moon_unit/on_border                     | FSM_unit/FSM_sequential_game_state_reg[2]_2 |                1 |              1 |         1.00 |
+|  player_unit/player_x_reg_reg[8]_0           |                                         | player_unit/player_x_reg_reg[8]_1           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[8]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[4]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[3]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[3]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[2]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[2]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[8]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[8]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[0]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[0]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[1]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[1]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[2]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[2]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[7]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[7]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[0]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[0]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[5]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[5]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[4]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[4]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[6]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[6]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_x_reg_reg[1]_LDC_i_1_n_0   |                                         | FSM_unit/laser_x_next_reg[1]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[4]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[4]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[8]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[8]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[3]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[3]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[5]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[5]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[6]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[6]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[7]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[7]                |                1 |              1 |         1.00 |
+|  laser_unit/laser_y_reg_reg[9]_LDC_i_1_n_0   |                                         | FSM_unit/laser_y_next_reg[9]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[6]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  FSM_unit/FSM_sequential_game_state_reg[2]_2 |                                         | FSM_unit/FSM_sequential_game_state_reg[2]_3 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[2]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[0]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[1]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[3]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[4]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[5]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[6]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/temp_data[7]_i_1_n_0 | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[3]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[2]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[8]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[0]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[1]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[2]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[7]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[0]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[5]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[4]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[9]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_x_reg_reg[1]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[4]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[8]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[3]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[5]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[6]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[7]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | laser_unit/laser_y_reg_reg[9]_LDC_i_1_n_0   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[5]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[7]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[8]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[2]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[6]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[1]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[2]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[7]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[5]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[0]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[1]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_x_next_reg[3]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[0]                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/laser_y_next_reg[3]                |                1 |              1 |         1.00 |
+|  hecatia_unit/tick                           |                                         |                                             |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/p_0_in               | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                               | FSM_unit/num_bomb_next                  | FSM_unit/hard_reset                         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                               | FSM_unit/num_life_next                  | FSM_unit/hard_reset                         |                2 |              4 |         2.00 |
+|  moon_unit/tick_BUFG                         | moon_unit/delay_next[5]_C_i_1_n_0       | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/hard_reset                         |                5 |              6 |         1.20 |
+|  health_unit/tick                            |                                         | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                2 |              7 |         3.50 |
+|  clk25_BUFG                                  |                                         | vgac_unit/h_count[9]_i_1_n_0                |                4 |             10 |         2.50 |
+|  clk25_BUFG                                  | vgac_unit/v_count                       | FSM_unit/hard_reset                         |                7 |             10 |         1.43 |
+|  clk_IBUF_BUFG                               | PS2_Interface_unit/data[9]_i_1_n_0      | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG                               | music_unit/add_cnt2                     |                                             |                4 |             11 |         2.75 |
+|  clk_IBUF_BUFG                               |                                         | vgac_unit/SR[0]                             |                7 |             12 |         1.71 |
+|  vgac_unit/E[0]                              |                                         |                                             |                4 |             13 |         3.25 |
+|  clk_IBUF_BUFG                               | music_unit/add_cnt1                     |                                             |                5 |             17 |         3.40 |
+|  player_unit/tick                            |                                         | FSM_unit/FSM_sequential_game_state_reg[2]_1 |               10 |             19 |         1.90 |
+|  laser_unit/tick                             |                                         | FSM_unit/FSM_sequential_game_state_reg[2]_1 |               10 |             19 |         1.90 |
+|  clk_IBUF_BUFG                               |                                         | moon_unit/time_reg[0]_i_1__0_n_0            |                5 |             19 |         3.80 |
+|  moon_unit/tick_BUFG                         |                                         | FSM_unit/FSM_sequential_game_state_reg[2]_1 |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG                               | FSM_unit/E[0]                           | player_unit/time_reg[0]_i_1_n_0             |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG                               | FSM_unit/E[0]                           | health_unit/time_reg[19]_i_1__0_n_0         |                6 |             20 |         3.33 |
+|  clk25_BUFG                                  |                                         |                                             |               11 |             22 |         2.00 |
+|  clk_IBUF_BUFG                               | FSM_unit/timeout_next                   | FSM_unit/hard_reset                         |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                               | FSM_unit/E[0]                           |                                             |               20 |             47 |         2.35 |
+|  clk_IBUF_BUFG                               |                                         | FSM_unit/FSM_sequential_game_state_reg[2]_1 |               20 |             57 |         2.85 |
+|  clk_IBUF_BUFG                               |                                         |                                             |               73 |            120 |         1.64 |
++----------------------------------------------+-----------------------------------------+---------------------------------------------+------------------+----------------+--------------+
+
+
